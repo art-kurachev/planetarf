@@ -9,7 +9,7 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="backdrop-blur-[12px] bg-[rgba(255,255,255,0.01)] flex gap-[56px] items-center px-[95px] py-[24px] sticky top-0 z-50 w-full">
+    <header className="backdrop-blur-[12px] bg-[rgba(255,255,255,0.01)] relative flex gap-[56px] items-center px-[95px] py-[24px] sticky top-0 z-50 w-full">
       {/* Logo */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -20,7 +20,7 @@ export default function Header() {
       />
 
       {/* Nav */}
-      <nav className="flex gap-[56px] items-center flex-1">
+      <nav className="absolute left-1/2 -translate-x-1/2 flex gap-[56px] items-center text-center">
         {navItems.map((item) => (
           <a
             key={item}
@@ -33,7 +33,7 @@ export default function Header() {
       </nav>
 
       {/* Buttons */}
-      <div className="flex gap-[8px] items-center shrink-0">
+      <div className="ml-auto flex gap-[8px] items-center shrink-0">
         <button className="backdrop-blur-[3px] border-[1.5px] border-[#e9edf4] px-[24px] py-[12px] rounded-[24px] font-medium text-[14px] text-[#2e3345] whitespace-nowrap">
           Войти
         </button>

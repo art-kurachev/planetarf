@@ -5,7 +5,18 @@ const avatar4 = "https://www.figma.com/api/mcp/asset/f49b365b-7614-42bf-afea-509
 const avatar5 = "https://www.figma.com/api/mcp/asset/11f5e18f-4580-4c0a-adea-6a79bd34dd4d";
 const avatar6 = "https://www.figma.com/api/mcp/asset/a363909f-1e83-4033-9d74-db26588e7f2b";
 
-const clientLogos = ["RS", "bestcon", "ПОКЛОННАЯ №7", "MID ЖИЛОЙ КОМПЛЕКС", "ВРЕМЯ", "БОЛЬШАЯ СЕМЕРКА"];
+const clientLogos = [
+  { src: "/logos/lobachevskiy.png", alt: "ЖК Лобачевский" },
+  { src: "/logos/bolshaya-semerka.png", alt: "Большая Семерка" },
+  { src: "/logos/poklonnaya7.png", alt: "Поклонная №7" },
+  { src: "/logos/dar.png", alt: "DAR" },
+  { src: "/logos/krylatkiy.png", alt: "ЖК Крылатский" },
+  { src: "/logos/solos.png", alt: "SOLOS" },
+  { src: "/logos/rakurs.png", alt: "RAKURS" },
+  { src: "/logos/mid.png", alt: "MID Жилой Комплекс" },
+  { src: "/logos/bestcon.png", alt: "Bestcon" },
+  { src: "/logos/vremya.png", alt: "Время" },
+];
 
 export default function Testimonials() {
   return (
@@ -124,15 +135,20 @@ export default function Testimonials() {
       </div>
 
       {/* Marquee логотипы клиентов */}
-      <div className="w-full overflow-hidden">
-        <div className="flex animate-marquee" style={{ width: "max-content" }}>
+      <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+        <div className="flex w-max gap-[16px] animate-marquee pr-[16px]">
           {[...clientLogos, ...clientLogos].map((logo, i) => (
             <div
               key={i}
-              className="flex items-center justify-center rounded-[16px] mx-[16px] flex-shrink-0 bg-[#f8fafc] border border-[#e9edf4]"
-              style={{ width: "200px", height: "64px" }}
+              className="flex items-center justify-center rounded-[16px] flex-shrink-0 px-[28px]"
+              style={{ height: "64px" }}
             >
-              <span className="font-semibold text-[13px] text-[#616f9e]">{logo}</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="max-h-[34px] w-auto object-contain"
+              />
             </div>
           ))}
         </div>

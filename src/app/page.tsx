@@ -10,11 +10,13 @@ export default function Home() {
     <main className="bg-white min-h-screen">
       <Header />
       {/* Hero с декоративным фоном */}
-      <section className="relative overflow-hidden pt-[56px] pb-[120px]">
+      <section className="relative overflow-visible pt-[56px] pb-[120px]">
         {/* Декоративные эллипсы */}
-        <div className="absolute top-0 left-0 w-[1109px] h-[1109px] rounded-full bg-[#dbe7fb] opacity-15 blur-[160px] pointer-events-none" />
-        <div className="absolute top-[-272px] right-0 w-[871px] h-[871px] rounded-full bg-[#dbe7fb] opacity-10 blur-[160px] pointer-events-none" />
-        <Hero />
+        <div className="absolute top-0 left-0 w-[1109px] h-[1109px] rounded-full bg-[#dbe7fb] opacity-20 blur-[160px] pointer-events-none z-0" />
+        <div className="absolute top-[-272px] right-0 w-[871px] h-[871px] rounded-full bg-[#dbe7fb] opacity-10 blur-[160px] pointer-events-none z-0" />
+        <div className="relative z-10">
+          <Hero />
+        </div>
       </section>
       <section className="py-[120px]">
         <Integrations />

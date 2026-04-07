@@ -13,5 +13,6 @@ body { background: white; font-family: var(--font-manrope), sans-serif; }
 }
 
 .animate-marquee {
-  animation: marquee 20s linear infinite;
+  animation: marquee 80s linear infinite;
+  will-change: transform;
 }
