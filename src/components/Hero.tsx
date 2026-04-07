@@ -85,7 +85,7 @@ export default function Hero() {
             </div>
           </div>
           {/* Phone mockup */}
-          <div className="flex gap-[16px] items-center justify-center h-[236px] shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className="flex gap-[16px] items-center justify-center h-[236px] py-[12px] shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             <div className="relative inline-grid grid-cols-1 grid-rows-1">
               <div className="col-start-1 row-start-1 h-[226.75px] ml-[3.87px] mt-[4.35px] w-[104.91px] rounded-[15.48px] overflow-hidden absolute">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

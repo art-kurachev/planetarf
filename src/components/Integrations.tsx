@@ -1,15 +1,15 @@
-const imgIntegrations = "https://www.figma.com/api/mcp/asset/be453586-ac61-47ff-be55-780cc31a9561";
+const imgIntegrations = "/figma-assets/be453586-ac61-47ff-be55-780cc31a9561.png";
 
 export default function Integrations() {
   return (
-    <div className="flex items-center justify-between w-full max-w-[1224px] mx-auto h-[504px]">
+    <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12 w-full max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Левая часть */}
-      <div className="flex flex-col h-full items-start justify-between py-[56px] w-[563px]">
-        <div className="flex flex-col gap-[16px]">
+      <div className="flex flex-col items-start justify-between gap-8 lg:gap-10 py-2 lg:py-8 w-full lg:w-[563px]">
+        <div className="flex flex-col gap-4">
           <div className="bg-[#dbe7fb] px-[16px] py-[8px] rounded-[24px] w-fit">
             <p className="font-medium text-[14px] text-[#6788ec] w-fit">Экосистема интеграций</p>
           </div>
-          <p className="font-normal text-[32px] text-[#2e3345] leading-[1.2] w-[504px]">
+          <p className="font-normal text-[clamp(1.75rem,4vw,2rem)] text-[#2e3345] leading-[1.2] max-w-[504px]">
             Работает с теми инструментами, которые у вас уже есть
           </p>
           <p className="font-normal text-[14px] text-[#2e3345] leading-[1.4]">
@@ -22,12 +22,12 @@ export default function Integrations() {
             Подключение от 1 дня.
           </p>
         </div>
-        <button className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] text-white font-medium text-[16px] leading-[16px]">
+        <button className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] text-white font-medium text-[16px] leading-[16px] cursor-pointer shadow-[0px_9px_9px_rgba(103,136,236,0.16)] transition-all duration-200 hover:bg-[#4f74e2] hover:-translate-y-[2px] hover:shadow-[0px_16px_28px_rgba(103,136,236,0.34)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40">
           Записаться на демо-показ
         </button>
       </div>
       {/* Правая часть — интеграционная схема */}
-      <div className="relative h-full" style={{ aspectRatio: "1366/1046" }}>
+      <div className="relative w-full max-w-[620px] aspect-[1366/1046]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imgIntegrations}
