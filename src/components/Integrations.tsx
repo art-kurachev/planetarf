@@ -6,8 +6,8 @@ export default function Integrations() {
       {/* Левая часть */}
       <div className="flex flex-col h-full items-start justify-between py-[56px] w-[563px]">
         <div className="flex flex-col gap-[16px]">
-          <div className="bg-[#dbe7fb] px-[16px] py-[8px] rounded-[24px]">
-            <p className="font-medium text-[14px] text-[#6788ec]">Экосистема интеграций</p>
+          <div className="bg-[#dbe7fb] px-[16px] py-[8px] rounded-[24px] w-fit">
+            <p className="font-medium text-[14px] text-[#6788ec] w-fit">Экосистема интеграций</p>
           </div>
           <p className="font-normal text-[32px] text-[#2e3345] leading-[1.2] w-[504px]">
             Работает с теми инструментами, которые у вас уже есть
@@ -22,7 +22,7 @@ export default function Integrations() {
             Подключение от 1 дня.
           </p>
         </div>
-        <button className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] text-white font-medium text-[16px]">
+        <button className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] text-white font-medium text-[16px] leading-[16px]">
           Записаться на демо-показ
         </button>
       </div>
