@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
 
 const imgBg = "/figma-assets/86391a72-e3d5-4dc2-904a-4b57f7df5231.png";
 const imgLogo = "/figma-assets/5e1996ad-28a2-4584-9916-24a1f2135a85.svg";
@@ -9,11 +9,13 @@ const imgDownload = "/figma-assets/e74bf0ae-6d13-4cdf-805f-35cfe3a0814e.svg";
 const imgFooterLogo = "/figma-assets/c6f22121-ce19-433d-b7fc-0d79e0b368c5.svg";
 
 type FooterProps = {
-  onOpenDemo: (prefillEmail?: string) => void;
+  onSubmitEmail?: (email: string) => Promise<void> | void;
 };
 
-export default function Footer({ onOpenDemo }: FooterProps) {
+export default function Footer({ onSubmitEmail }: FooterProps) {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const handleEmailChange = (value: string) => {
     // Simple email mask: lowercase, no spaces/cyrillic, single @.
     const normalized = value
@@ -32,8 +34,32 @@ export default function Footer({ onOpenDemo }: FooterProps) {
     setEmail(`${localPart}@${domainPart}`);
   };
 
+  const isEmailValid = useMemo(() => {
+    const normalized = email.trim();
+    if (!normalized) return false;
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalized);
+  }, [email]);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!isEmailValid || isSubmitting) return;
+    setIsSubmitting(true);
+    try {
+      if (onSubmitEmail) {
+        await onSubmitEmail(email.trim());
+      } else {
+        await new Promise((resolve) => setTimeout(resolve, 450));
+      }
+      setEmail("");
+      setIsSubmitted(true);
+      window.setTimeout(() => setIsSubmitted(false), 2200);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <div className="flex flex-col w-full px-4 sm:px-6">
+    <div id="contact" className="flex flex-col w-full px-4 sm:px-6 scroll-mt-28">
       {/* CTA секция */}
       <div className="relative min-h-[540px] lg:min-h-[601px] w-full rounded-t-[32px] lg:rounded-t-[56px] overflow-clip flex flex-col items-center justify-center px-4 sm:px-8 lg:px-20 py-10 lg:py-14">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -61,7 +87,10 @@ export default function Footer({ onOpenDemo }: FooterProps) {
             </div>
           </div>
           {/* Форма email */}
-          <div className="bg-white border border-[#e9edf4] flex flex-col sm:flex-row gap-2 sm:gap-4 items-stretch sm:items-center p-1 rounded-[24px] sm:rounded-[56px] w-full max-w-[452px]">
+          <form
+            className="bg-white border border-[#e9edf4] flex flex-col sm:flex-row gap-2 sm:gap-4 items-stretch sm:items-center p-1 rounded-[24px] sm:rounded-[56px] w-full max-w-[452px]"
+            onSubmit={handleSubmit}
+          >
             <input
               type="email"
               value={email}
@@ -74,13 +103,13 @@ export default function Footer({ onOpenDemo }: FooterProps) {
               className="flex-1 text-[14px] px-4 py-2 text-[#2e3345] placeholder:text-[#2e3345]/60 outline-none bg-transparent overflow-hidden text-ellipsis whitespace-nowrap"
             />
             <button
-              type="button"
-              onClick={() => onOpenDemo(email)}
-              className="bg-[#6788ec] px-[24px] py-[14px] rounded-[20px] sm:rounded-[32px] text-white font-medium text-[14px] leading-[16px] whitespace-nowrap transition-all duration-200 hover:bg-[#4f74e2] hover:shadow-[0px_12px_24px_rgba(103,136,236,0.32)] active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40"
+              type="submit"
+              disabled={!isEmailValid || isSubmitting}
+              className="bg-[#6788ec] px-[24px] py-[14px] rounded-[20px] sm:rounded-[32px] text-white font-medium text-[14px] leading-[16px] whitespace-nowrap transition-all duration-200 hover:bg-[#4f74e2] hover:shadow-[0px_12px_24px_rgba(103,136,236,0.32)] active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
             >
-              Записаться
+              {isSubmitting ? "Отправляем..." : isSubmitted ? "Отправлено" : "Записаться"}
             </button>
-          </div>
+          </form>
           {/* Контакты */}
           <div className="flex flex-col md:flex-row gap-5 md:gap-8 items-center md:items-start justify-center text-[#1e212b] w-full text-center md:text-left">
             <div className="flex flex-col gap-[4px] items-center md:items-end whitespace-nowrap">

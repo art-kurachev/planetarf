@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Integrations from "@/components/Integrations";
@@ -16,6 +16,16 @@ export default function Home() {
   const handleOpenDemo = useCallback((email?: string) => {
     setPrefillEmail(email ?? "");
     setIsDemoModalOpen(true);
+  }, []);
+
+  useEffect(() => {
+    // Disable browser scroll restoration so refresh always starts at top.
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
   }, []);
 
   return (
@@ -39,9 +49,8 @@ export default function Home() {
       <section id="testimonials" className="scroll-mt-28 py-14 sm:py-20 lg:py-28">
         <Testimonials />
       </section>
-      <Footer onOpenDemo={handleOpenDemo} />
+      <Footer />
       <DemoRequestModal
-        key={`${isDemoModalOpen ? "open" : "closed"}-${prefillEmail}`}
         isOpen={isDemoModalOpen}
         onClose={() => setIsDemoModalOpen(false)}
         prefillEmail={prefillEmail}

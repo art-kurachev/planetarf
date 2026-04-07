@@ -1,3 +1,5 @@
+"use client";
+
 const imgIntegrations = "/figma-assets/be453586-ac61-47ff-be55-780cc31a9561.png";
 
 type IntegrationsProps = {
@@ -5,6 +7,7 @@ type IntegrationsProps = {
 };
 
 export default function Integrations({ onOpenDemo }: IntegrationsProps) {
+
   return (
     <div className="flex flex-col lg:flex-row items-center gap-0 lg:gap-0 w-full max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Левая часть */}

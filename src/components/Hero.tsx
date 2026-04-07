@@ -1,3 +1,5 @@
+"use client";
+
 const img2 = "/figma-assets/52cc731f-9f1d-4238-9924-6b4367cebea6.png";
 const img3 = "/figma-assets/hero-uk-card-phone-v2.png";
 const img5 = "/figma-assets/51ea8e38-decf-41ba-9833-a498bbfde9ac.png";
@@ -8,6 +10,7 @@ type HeroProps = {
 };
 
 export default function Hero({ onOpenDemo }: HeroProps) {
+
   return (
     <div className="flex flex-col gap-10 lg:gap-14 items-center w-full max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Верхний блок: бейдж + заголовок + CTA */}
