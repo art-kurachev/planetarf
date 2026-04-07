@@ -8,7 +8,11 @@ const imgTelegram = "/figma-assets/40b20909-a4cc-403d-9cb6-ff5361359eb5.svg";
 const imgDownload = "/figma-assets/e74bf0ae-6d13-4cdf-805f-35cfe3a0814e.svg";
 const imgFooterLogo = "/figma-assets/c6f22121-ce19-433d-b7fc-0d79e0b368c5.svg";
 
-export default function Footer() {
+type FooterProps = {
+  onOpenDemo: (prefillEmail?: string) => void;
+};
+
+export default function Footer({ onOpenDemo }: FooterProps) {
   const [email, setEmail] = useState("");
   const handleEmailChange = (value: string) => {
     // Simple email mask: lowercase, no spaces/cyrillic, single @.
@@ -69,7 +73,11 @@ export default function Footer() {
               spellCheck={false}
               className="flex-1 text-[14px] px-4 py-2 text-[#2e3345] placeholder:text-[#2e3345]/60 outline-none bg-transparent overflow-hidden text-ellipsis whitespace-nowrap"
             />
-            <button className="bg-[#6788ec] px-[24px] py-[14px] rounded-[20px] sm:rounded-[32px] text-white font-medium text-[14px] leading-[16px] whitespace-nowrap transition-all duration-200 hover:bg-[#4f74e2] hover:shadow-[0px_12px_24px_rgba(103,136,236,0.32)] active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40">
+            <button
+              type="button"
+              onClick={() => onOpenDemo(email)}
+              className="bg-[#6788ec] px-[24px] py-[14px] rounded-[20px] sm:rounded-[32px] text-white font-medium text-[14px] leading-[16px] whitespace-nowrap transition-all duration-200 hover:bg-[#4f74e2] hover:shadow-[0px_12px_24px_rgba(103,136,236,0.32)] active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40"
+            >
               Записаться
             </button>
           </div>

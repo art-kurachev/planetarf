@@ -1,12 +1,13 @@
 const img2 = "/figma-assets/52cc731f-9f1d-4238-9924-6b4367cebea6.png";
-const img1 = "/figma-assets/2597b14c-54aa-4bc6-b64b-ca17fdf1ff75.png";
-const img3 = "/figma-assets/4747218e-6ce5-4896-8381-d27532f9ca3d.png";
-const imgIPhone = "/figma-assets/c24c47a2-9ff7-45c1-99bf-1b8ae9e20ed7.png";
-const img4 = "/figma-assets/c5a535cf-05c5-47b5-833d-cdda7bb73bc7.png";
+const img3 = "/figma-assets/hero-uk-card-phone-v2.png";
 const img5 = "/figma-assets/51ea8e38-decf-41ba-9833-a498bbfde9ac.png";
 const img6 = "/figma-assets/b4a92bfb-5241-4697-8089-05990e1f2d1e.png";
 
-export default function Hero() {
+type HeroProps = {
+  onOpenDemo: () => void;
+};
+
+export default function Hero({ onOpenDemo }: HeroProps) {
   return (
     <div className="flex flex-col gap-10 lg:gap-14 items-center w-full max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Верхний блок: бейдж + заголовок + CTA */}
@@ -27,7 +28,11 @@ export default function Hero() {
         </div>
         {/* CTA */}
         <div className="flex flex-col gap-[8px] items-center">
-          <button className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] shadow-[0px_9px_9px_rgba(103,136,236,0.16)] text-white font-medium text-[16px] leading-[16px] transition-all duration-200 hover:bg-[#4f74e2] hover:-translate-y-[2px] hover:shadow-[0px_16px_28px_rgba(103,136,236,0.34)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40">
+          <button
+            type="button"
+            onClick={onOpenDemo}
+            className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] shadow-[0px_9px_9px_rgba(103,136,236,0.16)] text-white font-medium text-[16px] leading-[16px] transition-all duration-200 hover:bg-[#4f74e2] hover:-translate-y-[2px] hover:shadow-[0px_16px_28px_rgba(103,136,236,0.34)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40"
+          >
             Записаться на демо-показ
           </button>
           <p className="text-[12px] text-[#616f9e]">Это займет не более 15 минут</p>
@@ -85,45 +90,13 @@ export default function Hero() {
             </div>
           </div>
           {/* Phone mockup */}
-          <div className="flex gap-[16px] items-center justify-center h-[236px] py-[12px] shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
-            <div className="relative inline-grid grid-cols-1 grid-rows-1">
-              <div className="col-start-1 row-start-1 h-[226.75px] ml-[3.87px] mt-[4.35px] w-[104.91px] rounded-[15.48px] overflow-hidden absolute">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={img1}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover rounded-[15.48px]"
-                />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={img3}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover rounded-[15.48px]"
-                />
-              </div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={imgIPhone}
-                alt=""
-                className="col-start-1 row-start-1 h-[234.976px] w-[112.17px] relative"
-              />
-            </div>
-            <div className="relative inline-grid grid-cols-1 grid-rows-1">
-              <div className="col-start-1 row-start-1 h-[226.75px] ml-[3.87px] mt-[4.35px] w-[104.91px] rounded-[15.48px] overflow-hidden absolute">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={img4}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover rounded-[15.48px]"
-                />
-              </div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={imgIPhone}
-                alt=""
-                className="col-start-1 row-start-1 h-[234.976px] w-[112.17px] relative"
-              />
-            </div>
+          <div className="flex items-center justify-center h-[236px] py-[12px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={img3}
+              alt="Мобильное приложение"
+              className="h-full w-auto max-w-full object-contain drop-shadow-[0px_16px_28px_rgba(122,133,168,0.22)]"
+            />
           </div>
         </div>
 

@@ -1,6 +1,10 @@
 const imgIntegrations = "/figma-assets/be453586-ac61-47ff-be55-780cc31a9561.png";
 
-export default function Integrations() {
+type IntegrationsProps = {
+  onOpenDemo: () => void;
+};
+
+export default function Integrations({ onOpenDemo }: IntegrationsProps) {
   return (
     <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12 w-full max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Левая часть */}
@@ -22,7 +26,11 @@ export default function Integrations() {
             Подключение от 1 дня.
           </p>
         </div>
-        <button className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] text-white font-medium text-[16px] leading-[16px] cursor-pointer shadow-[0px_9px_9px_rgba(103,136,236,0.16)] transition-all duration-200 hover:bg-[#4f74e2] hover:-translate-y-[2px] hover:shadow-[0px_16px_28px_rgba(103,136,236,0.34)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40">
+        <button
+          type="button"
+          onClick={onOpenDemo}
+          className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] text-white font-medium text-[16px] leading-[16px] cursor-pointer shadow-[0px_9px_9px_rgba(103,136,236,0.16)] transition-all duration-200 hover:bg-[#4f74e2] hover:-translate-y-[2px] hover:shadow-[0px_16px_28px_rgba(103,136,236,0.34)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40"
+        >
           Записаться на демо-показ
         </button>
       </div>
