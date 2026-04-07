@@ -6,7 +6,7 @@ export default function Features() {
   return (
     <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-start justify-center w-full max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Левая часть — телефон (без overflow-hidden, чтоб телефон не обрезался) */}
-      <div className="w-full lg:flex-[1_0_0] min-h-[320px] lg:min-h-[582px] relative z-0">
+      <div className="w-full lg:flex-[1_0_0] min-h-[320px] lg:min-h-[582px] relative z-0 overflow-hidden lg:overflow-visible">
         <div className="absolute left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-[-329px] w-[840px] h-[520px] lg:size-[1277px] top-[-120px] lg:top-[-401px] -z-10 pointer-events-none">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

@@ -17,13 +17,13 @@ export default function Integrations({ onOpenDemo }: IntegrationsProps) {
             <p className="font-medium text-[14px] text-[#6788ec] w-fit">Экосистема интеграций</p>
           </div>
           <p className="font-normal text-[clamp(1.75rem,4vw,2rem)] text-[#2e3345] leading-[1.2] max-w-[504px]">
-            Работает с теми инструментами,
-            <br />
+            Работает с теми инструментами,{" "}
+            <br className="hidden lg:block" />
             которые у&nbsp;вас уже есть
           </p>
           <p className="font-normal text-[14px] text-[#2e3345] leading-[1.4]">
-            Платформа подключается к&nbsp;1С, CRM, мессенджерам и&nbsp;сервисам учёта
-            <br />— без замены существующей инфраструктуры и&nbsp;дорогостоящих доработок.
+            Платформа подключается к&nbsp;1С, CRM, мессенджерам и&nbsp;сервисам учёта{" "}
+            — без замены существующей инфраструктуры и&nbsp;дорогостоящих доработок.
           </p>
           <p className="font-normal text-[20px] text-[#2e3345] leading-[1.2]">
             15+ готовых интеграций.
