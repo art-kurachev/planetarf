@@ -1,0 +1,194 @@
+const img2 = "https://www.figma.com/api/mcp/asset/52cc731f-9f1d-4238-9924-6b4367cebea6";
+const img1 = "https://www.figma.com/api/mcp/asset/2597b14c-54aa-4bc6-b64b-ca17fdf1ff75";
+const img3 = "https://www.figma.com/api/mcp/asset/4747218e-6ce5-4896-8381-d27532f9ca3d";
+const imgIPhone = "https://www.figma.com/api/mcp/asset/c24c47a2-9ff7-45c1-99bf-1b8ae9e20ed7";
+const img4 = "https://www.figma.com/api/mcp/asset/c5a535cf-05c5-47b5-833d-cdda7bb73bc7";
+const img5 = "https://www.figma.com/api/mcp/asset/51ea8e38-decf-41ba-9833-a498bbfde9ac";
+const img6 = "https://www.figma.com/api/mcp/asset/b4a92bfb-5241-4697-8089-05990e1f2d1e";
+
+export default function Hero() {
+  return (
+    <div className="flex flex-col gap-[56px] items-center w-full max-w-[1224px] mx-auto">
+      {/* Верхний блок: бейдж + заголовок + CTA */}
+      <div className="flex flex-col gap-[32px] items-center w-full">
+        <div className="flex flex-col gap-[16px] items-center w-full">
+          {/* Бейдж */}
+          <div className="border-[1.5px] border-[#94b7f4] flex items-center justify-center px-[24px] py-[8px] rounded-[24px]">
+            <p className="font-medium text-[16px] text-[#6788ec]">Planeta ERP</p>
+          </div>
+          {/* H1 */}
+          <p className="font-normal text-[56px] text-[#2e3345] text-center leading-[1.2]">
+            Единая цифровая экосистема <br /> для управления крупным бизнесом
+          </p>
+          {/* Subtitle */}
+          <p className="font-normal text-[24px] text-[#616f9e] text-center leading-[1.4]">
+            Контроль процессов, денег и сроков в одной системе
+          </p>
+        </div>
+        {/* CTA */}
+        <div className="flex flex-col gap-[8px] items-center">
+          <button className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] shadow-[0px_9px_9px_rgba(103,136,236,0.16)] text-white font-medium text-[16px]">
+            Записаться на демо-показ
+          </button>
+          <p className="text-[12px] text-[#616f9e]">Это займет не более 15 минут</p>
+        </div>
+      </div>
+
+      {/* 4 карточки */}
+      <div className="flex gap-[8px] h-[403px] w-full">
+        {/* Карточка 1: Инвестиционно-строительные */}
+        <div className="flex-1 bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden">
+          <div className="flex flex-col gap-[12px]">
+            <p className="text-[18px] text-[#2e3345] leading-[1.2]">
+              Инвестиционно-
+              <br />
+              строительные компании
+            </p>
+            <div className="flex flex-wrap gap-[4px]">
+              {["Снабжение", "Оплаты", "Сроки", "Контроль стройки", "Поставки"].map((t) => (
+                <span
+                  key={t}
+                  className="bg-[#f4f6fa] px-[8px] py-[4px] rounded-[8px] text-[12px] text-[#616f9e] font-medium"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={img2}
+              alt=""
+              className="absolute h-[187.92%] left-[0.03%] top-[-10.74%] w-[157.96%] max-w-none"
+            />
+          </div>
+        </div>
+
+        {/* Карточка 2: УК ЖКХ */}
+        <div className="flex-1 bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden">
+          <div className="flex flex-col gap-[12px]">
+            <p className="text-[18px] text-[#2e3345] leading-[1.2]">
+              Управляющие
+              <br />
+              компании (ЖКХ)
+            </p>
+            <div className="flex flex-wrap gap-[4px]">
+              {["Заявки", "Аварии", "SLA", "Обслуживание"].map((t) => (
+                <span
+                  key={t}
+                  className="bg-[#f4f6fa] px-[8px] py-[4px] rounded-[8px] text-[12px] text-[#616f9e] font-medium"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+          {/* Phone mockup */}
+          <div className="flex gap-[16px] items-center justify-center h-[236px]">
+            <div className="relative inline-grid grid-cols-1 grid-rows-1">
+              <div className="col-start-1 row-start-1 h-[226.75px] ml-[3.87px] mt-[4.35px] w-[104.91px] rounded-[15.48px] overflow-hidden absolute">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img1}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover rounded-[15.48px]"
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img3}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover rounded-[15.48px]"
+                />
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={imgIPhone}
+                alt=""
+                className="col-start-1 row-start-1 h-[234.976px] w-[112.17px] relative"
+              />
+            </div>
+            <div className="relative inline-grid grid-cols-1 grid-rows-1">
+              <div className="col-start-1 row-start-1 h-[226.75px] ml-[3.87px] mt-[4.35px] w-[104.91px] rounded-[15.48px] overflow-hidden absolute">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img4}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover rounded-[15.48px]"
+                />
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={imgIPhone}
+                alt=""
+                className="col-start-1 row-start-1 h-[234.976px] w-[112.17px] relative"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Карточка 3: Агентства недвижимости */}
+        <div className="flex-1 bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden">
+          <div className="flex flex-col gap-[12px]">
+            <p className="text-[18px] text-[#2e3345] leading-[1.2]">
+              Агентства недвижимости
+              <br />и Департаменты продаж
+            </p>
+            <div className="flex flex-wrap gap-[4px]">
+              {["Лиды", "Сделки", "Звонки", "Воронка", "Клиенты"].map((t) => (
+                <span
+                  key={t}
+                  className="bg-[#f4f6fa] px-[8px] py-[4px] rounded-[8px] text-[12px] text-[#616f9e] font-medium"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={img2}
+              alt=""
+              className="absolute h-[146.82%] left-[0.07%] top-[-7.43%] w-[123.41%] max-w-none"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={img5}
+              alt=""
+              className="absolute h-[211.22%] left-[0.01%] top-[0.17%] w-[228.65%] max-w-none"
+            />
+          </div>
+        </div>
+
+        {/* Карточка 4: Корпоративный */}
+        <div className="flex-1 bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden">
+          <div className="flex flex-col gap-[12px]">
+            <p className="text-[18px] text-[#2e3345] leading-[1.2]">
+              Корпоративный сектор
+              <br />и Сервисные компании
+            </p>
+            <div className="flex flex-wrap gap-[4px]">
+              {["Согласования", "Процессы", "Задачи", "Документы"].map((t) => (
+                <span
+                  key={t}
+                  className="bg-[#f4f6fa] px-[8px] py-[4px] rounded-[8px] text-[12px] text-[#616f9e] font-medium"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={img6}
+              alt=""
+              className="absolute h-[208.21%] left-[-37.69%] top-[-16.74%] w-[205.93%] max-w-none"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
