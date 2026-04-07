@@ -1,33 +1,33 @@
-const img2 = "https://www.figma.com/api/mcp/asset/52cc731f-9f1d-4238-9924-6b4367cebea6";
-const img1 = "https://www.figma.com/api/mcp/asset/2597b14c-54aa-4bc6-b64b-ca17fdf1ff75";
-const img3 = "https://www.figma.com/api/mcp/asset/4747218e-6ce5-4896-8381-d27532f9ca3d";
-const imgIPhone = "https://www.figma.com/api/mcp/asset/c24c47a2-9ff7-45c1-99bf-1b8ae9e20ed7";
-const img4 = "https://www.figma.com/api/mcp/asset/c5a535cf-05c5-47b5-833d-cdda7bb73bc7";
-const img5 = "https://www.figma.com/api/mcp/asset/51ea8e38-decf-41ba-9833-a498bbfde9ac";
-const img6 = "https://www.figma.com/api/mcp/asset/b4a92bfb-5241-4697-8089-05990e1f2d1e";
+const img2 = "/figma-assets/52cc731f-9f1d-4238-9924-6b4367cebea6.png";
+const img1 = "/figma-assets/2597b14c-54aa-4bc6-b64b-ca17fdf1ff75.png";
+const img3 = "/figma-assets/4747218e-6ce5-4896-8381-d27532f9ca3d.png";
+const imgIPhone = "/figma-assets/c24c47a2-9ff7-45c1-99bf-1b8ae9e20ed7.png";
+const img4 = "/figma-assets/c5a535cf-05c5-47b5-833d-cdda7bb73bc7.png";
+const img5 = "/figma-assets/51ea8e38-decf-41ba-9833-a498bbfde9ac.png";
+const img6 = "/figma-assets/b4a92bfb-5241-4697-8089-05990e1f2d1e.png";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col gap-[56px] items-center w-full max-w-[1224px] mx-auto">
+    <div className="flex flex-col gap-10 lg:gap-14 items-center w-full max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Верхний блок: бейдж + заголовок + CTA */}
-      <div className="flex flex-col gap-[32px] items-center w-full">
-        <div className="flex flex-col gap-[16px] items-center w-full">
+      <div className="flex flex-col gap-6 lg:gap-8 items-center w-full">
+        <div className="flex flex-col gap-4 items-center w-full">
           {/* Бейдж */}
           <div className="border-[1.5px] border-[#94b7f4] flex items-center justify-center px-[24px] py-[8px] rounded-[24px]">
             <p className="font-medium text-[16px] text-[#6788ec]">Planeta ERP</p>
           </div>
           {/* H1 */}
-          <p className="font-normal text-[56px] text-[#2e3345] text-center leading-[1.2]">
+          <p className="font-normal text-[clamp(2rem,6vw,3.5rem)] text-[#2e3345] text-center leading-[1.15]">
             Единая цифровая экосистема <br /> для управления крупным бизнесом
           </p>
           {/* Subtitle */}
-          <p className="font-normal text-[24px] text-[#616f9e] text-center leading-[1.4]">
+          <p className="font-normal text-[clamp(1rem,3.5vw,1.5rem)] text-[#616f9e] text-center leading-[1.35] max-w-[840px]">
             Контроль процессов, денег и сроков в одной системе
           </p>
         </div>
         {/* CTA */}
         <div className="flex flex-col gap-[8px] items-center">
-          <button className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] shadow-[0px_9px_9px_rgba(103,136,236,0.16)] text-white font-medium text-[16px] leading-[16px]">
+          <button className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] shadow-[0px_9px_9px_rgba(103,136,236,0.16)] text-white font-medium text-[16px] leading-[16px] transition-all duration-200 hover:bg-[#4f74e2] hover:-translate-y-[2px] hover:shadow-[0px_16px_28px_rgba(103,136,236,0.34)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40">
             Записаться на демо-показ
           </button>
           <p className="text-[12px] text-[#616f9e]">Это займет не более 15 минут</p>
@@ -55,7 +55,7 @@ export default function Hero() {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img2}
@@ -85,7 +85,7 @@ export default function Hero() {
             </div>
           </div>
           {/* Phone mockup */}
-          <div className="flex gap-[16px] items-center justify-center h-[236px]">
+          <div className="flex gap-[16px] items-center justify-center h-[236px] shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             <div className="relative inline-grid grid-cols-1 grid-rows-1">
               <div className="col-start-1 row-start-1 h-[226.75px] ml-[3.87px] mt-[4.35px] w-[104.91px] rounded-[15.48px] overflow-hidden absolute">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -145,7 +145,7 @@ export default function Hero() {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0 shadow-[-126px_-75px_41px_0px_rgba(122,133,168,0),-81px_-48px_38px_0px_rgba(122,133,168,0.01),-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05),-5px_-3px_13px_0px_rgba(122,133,168,0.06)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img2}
@@ -180,7 +180,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="flex-1" />
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0 shadow-[-126px_-75px_41px_0px_rgba(122,133,168,0),-81px_-48px_38px_0px_rgba(122,133,168,0.01),-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05),-5px_-3px_13px_0px_rgba(122,133,168,0.06)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img6}
