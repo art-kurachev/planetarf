@@ -22,7 +22,7 @@ export default function Home() {
     <main className="bg-white min-h-screen">
       <Header onOpenDemo={() => handleOpenDemo()} />
       {/* Hero с декоративным фоном */}
-      <section className="relative overflow-visible pt-8 sm:pt-12 lg:pt-14 pb-14 sm:pb-20 lg:pb-28">
+      <section id="app" className="relative overflow-visible scroll-mt-28 pt-8 sm:pt-12 lg:pt-14 pb-14 sm:pb-20 lg:pb-28">
         {/* Декоративные эллипсы */}
         <div className="absolute top-0 left-0 w-[1109px] h-[1109px] rounded-full bg-[#dbe7fb] opacity-20 blur-[160px] pointer-events-none z-0" />
         <div className="absolute top-[-272px] right-0 w-[871px] h-[871px] rounded-full bg-[#dbe7fb] opacity-10 blur-[160px] pointer-events-none z-0" />
@@ -30,13 +30,13 @@ export default function Home() {
           <Hero onOpenDemo={() => handleOpenDemo()} />
         </div>
       </section>
-      <section className="py-14 sm:py-20 lg:py-28">
+      <section id="integrations" className="scroll-mt-28 py-14 sm:py-20 lg:py-28">
         <Integrations onOpenDemo={() => handleOpenDemo()} />
       </section>
-      <section className="py-14 sm:py-20 lg:py-28">
+      <section id="features" className="scroll-mt-28 py-14 sm:py-20 lg:py-28">
         <Features />
       </section>
-      <section className="py-14 sm:py-20 lg:py-28">
+      <section id="testimonials" className="scroll-mt-28 py-14 sm:py-20 lg:py-28">
         <Testimonials />
       </section>
       <Footer onOpenDemo={handleOpenDemo} />

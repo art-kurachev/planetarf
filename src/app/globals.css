@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body { background: white; font-family: var(--font-manrope), sans-serif; }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 @keyframes marquee {
   from {

@@ -6,7 +6,7 @@ type IntegrationsProps = {
 
 export default function Integrations({ onOpenDemo }: IntegrationsProps) {
   return (
-    <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12 w-full max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col lg:flex-row items-center gap-0 lg:gap-0 w-full max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
       {/* Левая часть */}
       <div className="flex flex-col items-start justify-between gap-8 lg:gap-10 py-2 lg:py-8 w-full lg:w-[563px]">
         <div className="flex flex-col gap-4">
@@ -14,7 +14,9 @@ export default function Integrations({ onOpenDemo }: IntegrationsProps) {
             <p className="font-medium text-[14px] text-[#6788ec] w-fit">Экосистема интеграций</p>
           </div>
           <p className="font-normal text-[clamp(1.75rem,4vw,2rem)] text-[#2e3345] leading-[1.2] max-w-[504px]">
-            Работает с теми инструментами, которые у вас уже есть
+            Работает с теми инструментами,
+            <br />
+            которые у вас уже есть
           </p>
           <p className="font-normal text-[14px] text-[#2e3345] leading-[1.4]">
             Платформа подключается к 1С, CRM, мессенджерам и сервисам учёта
@@ -35,7 +37,7 @@ export default function Integrations({ onOpenDemo }: IntegrationsProps) {
         </button>
       </div>
       {/* Правая часть — интеграционная схема */}
-      <div className="relative w-full max-w-[620px] aspect-[1366/1046]">
+      <div className="relative w-full max-w-[620px] aspect-[1366/1046] pointer-events-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imgIntegrations}

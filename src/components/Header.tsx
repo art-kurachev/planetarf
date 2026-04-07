@@ -1,10 +1,10 @@
 const logoUrl = "/figma-assets/396e3568-a5f2-4c8c-9899-cdf4081d4cfa.svg";
 
 const navItems = [
-  "Отраслевые решения",
-  "Интеграции",
-  "Приложение",
-  "Отзывы",
+  { label: "Отраслевые решения", href: "#app" },
+  { label: "Интеграции", href: "#integrations" },
+  { label: "Приложение", href: "#features" },
+  { label: "Отзывы", href: "#testimonials" },
 ];
 
 type HeaderProps = {
@@ -28,11 +28,11 @@ export default function Header({ onOpenDemo }: HeaderProps) {
         <nav className="hidden lg:flex items-center gap-8 xl:gap-14 text-center absolute left-1/2 -translate-x-1/2">
           {navItems.map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               className="font-medium text-[16px] text-[#2e3345] whitespace-nowrap transition-all duration-200 hover:text-[#6788ec] hover:-translate-y-px"
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </nav>
