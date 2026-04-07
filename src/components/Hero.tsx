@@ -45,9 +45,9 @@ export default function Hero({ onOpenDemo }: HeroProps) {
       </div>
 
       {/* 4 карточки */}
-      <div className="flex gap-[8px] w-full overflow-x-auto snap-x snap-mandatory lg:overflow-visible lg:h-[403px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-[8px] w-full">
         {/* Карточка 1: Инвестиционно-строительные */}
-        <div className="group shrink-0 w-[75vw] max-w-[300px] snap-start lg:flex-1 lg:w-auto lg:max-w-none bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 hover:-translate-y-[24px] hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] hover:border-transparent hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
+        <div className="group bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
               Инвестиционно-
@@ -76,7 +76,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         </div>
 
         {/* Карточка 2: УК ЖКХ */}
-        <div className="group shrink-0 w-[75vw] max-w-[300px] snap-start lg:flex-1 lg:w-auto lg:max-w-none bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 hover:-translate-y-[24px] hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] hover:border-transparent hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
+        <div className="group bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
               Управляющие
@@ -106,7 +106,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         </div>
 
         {/* Карточка 3: Агентства недвижимости */}
-        <div className="group shrink-0 w-[75vw] max-w-[300px] snap-start lg:flex-1 lg:w-auto lg:max-w-none bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 hover:-translate-y-[24px] hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] hover:border-transparent hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
+        <div className="group bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
               Агентства недвижимости
@@ -140,7 +140,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         </div>
 
         {/* Карточка 4: Корпоративный */}
-        <div className="group shrink-0 w-[75vw] max-w-[300px] snap-start lg:flex-1 lg:w-auto lg:max-w-none bg-white border border-[#e9edf4] rounded-[24px] flex flex-col pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 hover:-translate-y-[24px] hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] hover:border-transparent hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
+        <div className="group bg-white border border-[#e9edf4] rounded-[24px] flex flex-col pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
               Корпоративный сектор
