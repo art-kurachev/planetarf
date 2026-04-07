@@ -30,7 +30,7 @@ export default function Testimonials() {
           Что говорят клиенты
         </p>
         <p className="font-normal text-[clamp(1rem,3vw,1.25rem)] text-[#909abb] text-center leading-[1.3]">
-          Реальные результаты от строительных компаний, УК и агентств недвижимости
+          Реальные результаты от&nbsp;строительных компаний, УК и&nbsp;агентств недвижимости
         </p>
       </div>
 
@@ -41,8 +41,8 @@ export default function Testimonials() {
           {/* Карточка 1 */}
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[32px] flex flex-col justify-between gap-[24px]">
             <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
-              «Planeta ERP позволила нам объединить снабжение, бюджетирование и документооборот в
-              одной системе. Время согласования счётов сократилось с 3 дней до нескольких часов»
+              «Planeta ERP позволила нам объединить снабжение, бюджетирование и&nbsp;документооборот в
+              одной системе. Время согласования счётов сократилось с&nbsp;3&nbsp;дней до&nbsp;нескольких часов»
             </p>
             <div className="flex gap-[8px] items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -57,7 +57,7 @@ export default function Testimonials() {
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[32px] flex flex-col justify-between gap-[24px]">
             <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
               «Раньше сводные отчёты по объектам готовились вручную и занимали весь понедельник.
-              Теперь дашборд обновляется автоматически — руководство видит актуальную картину в
+              Теперь дашборд обновляется автоматически — руководство видит актуальную картину в&nbsp;
               любой момент»
             </p>
             <div className="flex gap-[8px] items-center">
@@ -72,8 +72,8 @@ export default function Testimonials() {
           {/* Карточка 3 — высокая, row-span-2 */}
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px] xl:row-span-2">
             <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
-              «Интеграция с нашей 1С прошла без остановки работы. Данные по поставщикам, договорам
-              и оплатам синхронизируются автоматически»
+              «Интеграция с&nbsp;нашей 1С прошла без остановки работы. Данные по поставщикам, договорам
+              и&nbsp;оплатам синхронизируются автоматически»
             </p>
             <div className="flex gap-[8px] items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -87,7 +87,7 @@ export default function Testimonials() {
           {/* Карточка 4 — col-span-2 */}
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px] md:col-span-2 xl:h-[236px]">
             <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
-              «СКУД-модуль закрыл давнюю проблему с учётом рабочего времени на объектах. Теперь у
+              «СКУД-модуль закрыл давнюю проблему с&nbsp;учётом рабочего времени на&nbsp;объектах. Теперь у
               нас точные данные по каждому сотруднику без ручной сверки»
             </p>
             <div className="flex gap-[8px] items-center">
@@ -105,8 +105,8 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 xl:h-[236px]">
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px]">
             <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
-              «Система помогла выстроить контроль над закупками: видим остатки на складах, статус
-              заявок и плановые сроки поставок. Перерасход материалов снизился на 18%»
+              «Система помогла выстроить контроль над закупками: видим остатки на&nbsp;складах, статус
+              заявок и&nbsp;плановые сроки поставок. Перерасход материалов снизился на&nbsp;18%»
             </p>
             <div className="flex gap-[8px] items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -119,8 +119,8 @@ export default function Testimonials() {
           </div>
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px]">
             <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
-              «Planeta ERP — это не просто CRM, это операционная система для стройки. Мы управляем
-              12 объектами одновременно и не теряем ни одной детали»
+              «Planeta ERP — это не&nbsp;просто CRM, это операционная система для&nbsp;стройки. Мы управляем
+              12&nbsp;объектами одновременно и&nbsp;не&nbsp;теряем ни&nbsp;одной детали»
             </p>
             <div className="flex gap-[8px] items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}

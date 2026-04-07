@@ -23,12 +23,12 @@ export default function Features() {
             <p className="font-medium text-[14px] text-[#6788ec]">Система всегда под рукой</p>
           </div>
           <p className="font-normal text-[clamp(1.9rem,5vw,2.5rem)] text-[#2e3345] leading-[1.2] max-w-[491px]">
-            Контроль процессов — даже когда вы не в офисе
+            Контроль процессов — даже когда вы не&nbsp;в&nbsp;офисе
           </p>
           <p className="font-normal text-[18px] text-[#616f9e] leading-[1.4]">
-            Отслеживайте статусы, получайте обновления и будьте в курсе текущей ситуации по
+            Отслеживайте статусы, получайте обновления и&nbsp;будьте в&nbsp;курсе текущей ситуации по
             рабочим вопросам. Подходит для повседневного использования, когда важно быстро
-            понять, что происходит и где требуется внимание.
+            понять, что происходит и&nbsp;где требуется внимание.
           </p>
         </div>
         <div className="flex flex-col gap-[12px] items-start w-full max-w-[416px]">
@@ -38,7 +38,7 @@ export default function Features() {
           <div className="flex flex-col sm:flex-row gap-[8px] w-full">
             <div className="bg-[#eff1f8] flex gap-[8px] items-center p-[12px] rounded-[16px]">
               <div className="flex flex-col gap-[2px] items-start justify-end">
-                <p className="font-normal text-[14px] text-[#909abb] leading-[16px]">Загрузить в</p>
+                <p className="font-normal text-[14px] text-[#909abb] leading-[16px]">Загрузить в&nbsp;</p>
                 <p className="font-medium text-[16px] text-[#2e3345] leading-[18px]">App Store</p>
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -46,7 +46,7 @@ export default function Features() {
             </div>
             <div className="bg-[#eff1f8] flex gap-[8px] items-center p-[12px] rounded-[16px]">
               <div className="flex flex-col gap-[2px] items-start justify-end">
-                <p className="font-normal text-[14px] text-[#909abb] leading-[16px]">Доступно в</p>
+                <p className="font-normal text-[14px] text-[#909abb] leading-[16px]">Доступно в&nbsp;</p>
                 <p className="font-medium text-[16px] text-[#2e3345] leading-[18px]">Google Play</p>
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}

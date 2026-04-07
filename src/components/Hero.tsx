@@ -22,11 +22,11 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           </div>
           {/* H1 */}
           <p className="font-normal text-[clamp(2rem,6vw,3.5rem)] text-[#2e3345] text-center leading-[1.15]">
-            Единая цифровая экосистема <br /> для управления крупным бизнесом
+            Единая цифровая экосистема <br /> для&nbsp;управления крупным бизнесом
           </p>
           {/* Subtitle */}
           <p className="font-normal text-[clamp(1rem,3.5vw,1.5rem)] text-[#616f9e] text-center leading-[1.35] max-w-[840px]">
-            Контроль процессов, денег и сроков в одной системе
+            Контроль процессов, денег и&nbsp;сроков в&nbsp;одной системе
           </p>
         </div>
         {/* CTA */}
@@ -38,7 +38,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           >
             Записаться на демо-показ
           </button>
-          <p className="text-[12px] text-[#616f9e]">Это займет не более 15 минут</p>
+          <p className="text-[12px] text-[#616f9e]">Это займет не&nbsp;более 15&nbsp;минут</p>
         </div>
       </div>
 
@@ -108,7 +108,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
               Агентства недвижимости
-              <br />и Департаменты продаж
+              <br />и&nbsp;Департаменты продаж
             </p>
             <div className="flex flex-wrap gap-[4px]">
               {["Лиды", "Сделки", "Звонки", "Воронка", "Клиенты"].map((t) => (
@@ -142,7 +142,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
               Корпоративный сектор
-              <br />и Сервисные компании
+              <br />и&nbsp;Сервисные компании
             </p>
             <div className="flex flex-wrap gap-[4px]">
               {["Согласования", "Процессы", "Задачи", "Документы"].map((t) => (

@@ -82,7 +82,7 @@ export default function Footer({ onSubmitEmail }: FooterProps) {
               <p className="font-normal text-[clamp(2rem,6vw,3.5rem)] text-[#2e3345] text-center leading-[1.2] w-full">
                 Получите демонстрацию
                 <br />
-                под вашу отрасль
+                под&nbsp;вашу отрасль
               </p>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function Footer({ onSubmitEmail }: FooterProps) {
             </div>
             <div className="flex flex-col gap-[4px] items-center md:items-start">
               <p className="text-[18px] md:text-[22px]">Москва, Ленинградский проспект, 31а стр1</p>
-              <p className="text-[15px] md:text-[18px] opacity-60">(м. Динамо, Петровский парк)</p>
+              <p className="text-[15px] md:text-[18px] opacity-60">(м.&nbsp;Динамо, Петровский парк)</p>
             </div>
           </div>
           {/* Кнопки */}

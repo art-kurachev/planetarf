@@ -19,16 +19,16 @@ export default function Integrations({ onOpenDemo }: IntegrationsProps) {
           <p className="font-normal text-[clamp(1.75rem,4vw,2rem)] text-[#2e3345] leading-[1.2] max-w-[504px]">
             Работает с теми инструментами,
             <br />
-            которые у вас уже есть
+            которые у&nbsp;вас уже есть
           </p>
           <p className="font-normal text-[14px] text-[#2e3345] leading-[1.4]">
-            Платформа подключается к 1С, CRM, мессенджерам и сервисам учёта
-            <br />— без замены существующей инфраструктуры и дорогостоящих доработок.
+            Платформа подключается к&nbsp;1С, CRM, мессенджерам и&nbsp;сервисам учёта
+            <br />— без замены существующей инфраструктуры и&nbsp;дорогостоящих доработок.
           </p>
           <p className="font-normal text-[20px] text-[#2e3345] leading-[1.2]">
             15+ готовых интеграций.
             <br />
-            Подключение от 1 дня.
+            Подключение от&nbsp;1&nbsp;дня.
           </p>
         </div>
         <button

@@ -169,7 +169,7 @@ export default function DemoRequestModal({ isOpen, onClose, prefillEmail = "" }:
                   демонстрацию системы
                 </p>
                 <p className="mt-2 text-[16px] leading-[1.4] text-[#2e3345]">
-                  И получите доступ к planeta бесплатно.
+                  И&nbsp;получите доступ к&nbsp;planeta бесплатно.
                   <br />
                   Попробуйте все возможности сервиса
                   <br />
@@ -246,7 +246,7 @@ export default function DemoRequestModal({ isOpen, onClose, prefillEmail = "" }:
                   ) : null}
                 </span>
                 <span className="text-[14px] leading-[1.35] text-[#616f9e]">
-                  Я даю своё Согласие на обработку персональных данных в соответствии с Политикой в
+                  Я&nbsp;даю своё Согласие на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;Политикой в
                   отношении обработки персональных данных
                 </span>
               </label>
@@ -271,7 +271,7 @@ export default function DemoRequestModal({ isOpen, onClose, prefillEmail = "" }:
               <p className="w-full text-[14px] leading-[1.4] text-[#616f9e]">
                 Обычно отвечаем в течение
                 <br />
-                15–30 минут в рабочее время
+                15–30 минут в&nbsp;рабочее время
               </p>
             </div>
             <button
