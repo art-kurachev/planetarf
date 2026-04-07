@@ -63,14 +63,17 @@ export default function DemoRequestModal({ isOpen, onClose, prefillEmail = "" }:
   useEffect(() => {
     if (isOpen) {
       setShouldRender(true);
-      requestAnimationFrame(() => setIsVisible(true));
-      return;
+      setIsVisible(false);
+      const enterTimeout = window.setTimeout(() => {
+        setIsVisible(true);
+      }, 24);
+      return () => window.clearTimeout(enterTimeout);
     }
 
     setIsVisible(false);
     const timeout = window.setTimeout(() => {
       setShouldRender(false);
-    }, 260);
+    }, 430);
 
     return () => window.clearTimeout(timeout);
   }, [isOpen]);
@@ -134,21 +137,24 @@ export default function DemoRequestModal({ isOpen, onClose, prefillEmail = "" }:
 
   return (
     <div
-      className={`fixed inset-0 z-[120] bg-[#0f172a]/50 backdrop-blur-[4px] flex items-center justify-center p-4 transition-opacity duration-300 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
+      className="fixed inset-0 z-[120] bg-[#0f172a]/50 backdrop-blur-[4px] flex items-center justify-center p-4"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transition: "opacity 300ms ease",
+      }}
       onMouseDown={handleBackdropMouseDown}
       role="presentation"
     >
       <div
-        className={`w-full max-w-[466px] rounded-[48px] p-8 transition-all duration-300 ease-out ${
-          isVisible ? "translate-y-0 scale-100 opacity-100" : "translate-y-3 scale-[0.98] opacity-0"
-        }`}
+        className="w-full max-w-[466px] rounded-[48px] p-8"
         style={{
           background:
             "radial-gradient(141.42% 211% at 100% 100%, rgba(103, 136, 236, 0) 0%, rgba(103, 136, 236, 0.8) 100%), #f8fafc",
           boxShadow:
             "0px 199px 56px rgba(103, 136, 236, 0), 0px 127px 51px rgba(103, 136, 236, 0.03), 0px 71px 43px rgba(103, 136, 236, 0.09), 0px 32px 32px rgba(103, 136, 236, 0.16), 0px 8px 17px rgba(103, 136, 236, 0.18)",
+          transform: isVisible ? "translateY(0) scale(1)" : "translateY(48px) scale(0.985)",
+          opacity: isVisible ? 1 : 0,
+          transition: "transform 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 420ms ease",
         }}
         onMouseDown={(event) => event.stopPropagation()}
       >
@@ -254,15 +260,26 @@ export default function DemoRequestModal({ isOpen, onClose, prefillEmail = "" }:
             </form>
           </>
         ) : (
-          <div className="py-8 text-center">
-            <p className="text-[30px] leading-[1.15] text-[#2e3345]">Спасибо!</p>
-            <p className="mt-3 text-[18px] leading-[1.4] text-[#616f9e]">Спасибо за запись на демо, мы свяжемся с вами.</p>
+          <div className="w-full flex flex-col items-center gap-6 text-center">
+            <div className="w-full flex flex-col items-center gap-3">
+              <p className="w-full text-[28px] leading-[1.2] text-[#2e3345]">Спасибо за запись!</p>
+              <p className="w-full text-[16px] leading-[1.4] text-[#2e3345]">
+                Мы получили ваш запрос
+                <br />
+                на демонстрацию системы «Планета»
+              </p>
+              <p className="w-full text-[14px] leading-[1.4] text-[#616f9e]">
+                Обычно отвечаем в течение
+                <br />
+                15–30 минут в рабочее время
+              </p>
+            </div>
             <button
               type="button"
               onClick={handleClose}
-              className="mt-8 bg-[#6788ec] px-6 py-4 rounded-[24px] text-white font-medium text-[16px] leading-[16px] transition-all duration-200 hover:bg-[#4f74e2]"
+              className="w-full bg-[#6788ec] px-6 py-5 rounded-[32px] text-white font-medium text-[16px] leading-[16px] transition-all duration-200 hover:bg-[#5a7de6] active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40"
             >
-              Закрыть
+              Хорошо
             </button>
           </div>
         )}
