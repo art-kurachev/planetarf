@@ -2,10 +2,10 @@
 
 import { type KeyboardEvent, useEffect, useRef } from "react";
 
-const img2 = "/figma-assets/52cc731f-9f1d-4238-9924-6b4367cebea6.png";
-const img3 = "/figma-assets/hero-uk-card-phone-v2.png";
-const img5 = "/figma-assets/51ea8e38-decf-41ba-9833-a498bbfde9ac.png";
-const img6 = "/figma-assets/b4a92bfb-5241-4697-8089-05990e1f2d1e.png";
+const img2 = "/figma-assets/hero-segment-4.png";
+const img3 = "/figma-assets/hero-segment-2.png";
+const img5 = "/figma-assets/hero-segment-3.png";
+const img6 = "/figma-assets/hero-segment-1.png";
 
 type HeroProps = {
   onOpenDemo: () => void;
@@ -114,12 +114,12 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[276px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img2}
               alt=""
-              className="absolute h-[187.92%] left-[0.03%] top-[-10.74%] w-[157.96%] max-w-none"
+              className="block w-full h-full object-contain object-left-top"
             />
           </div>
         </div>
@@ -150,13 +150,15 @@ export default function Hero({ onOpenDemo }: HeroProps) {
             </div>
           </div>
           {/* Phone mockup */}
-          <div className="flex items-center justify-center h-[236px] py-[12px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={img3}
-              alt="Мобильное приложение"
-              className="h-full w-auto max-w-full object-contain drop-shadow-[0px_16px_28px_rgba(122,133,168,0.22)]"
-            />
+          <div className="flex h-[236px] items-start justify-center relative shrink-0 w-full">
+            <div className="h-[236px] relative shrink-0 w-[218px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={img3}
+                alt="Мобильное приложение"
+                className="absolute bottom-0 left-0 w-full h-auto origin-bottom scale-[1.15] object-contain pointer-events-none drop-shadow-[-45px_-27px_32px_rgba(122,133,168,0.03)]"
+              />
+            </div>
           </div>
         </div>
 
@@ -184,12 +186,12 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0 shadow-[-126px_-75px_41px_0px_rgba(122,133,168,0),-81px_-48px_38px_0px_rgba(122,133,168,0.01),-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05),-5px_-3px_13px_0px_rgba(122,133,168,0.06)]">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[276px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img5}
               alt=""
-              className="absolute h-[211.22%] left-[0.01%] top-[0.17%] w-[228.65%] max-w-none"
+              className="block w-full h-full object-contain object-left-top"
             />
           </div>
         </div>
@@ -200,7 +202,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col gap-4 pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
         >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
@@ -218,13 +220,12 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="flex-1" />
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[426px] relative overflow-hidden shrink-0 shadow-[-126px_-75px_41px_0px_rgba(122,133,168,0),-81px_-48px_38px_0px_rgba(122,133,168,0.01),-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05),-5px_-3px_13px_0px_rgba(122,133,168,0.06)]">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[276px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img6}
               alt=""
-              className="absolute h-[208.21%] left-[-37.69%] top-[-16.74%] w-[205.93%] max-w-none"
+              className="block w-full h-full object-contain object-left-top"
             />
           </div>
         </div>
