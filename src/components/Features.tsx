@@ -21,7 +21,7 @@ export default function Features() {
         </div>
       </div>
       {/* Правая часть */}
-      <div className="flex flex-col items-center lg:items-start justify-between py-4 lg:py-10 lg:pl-8 px-6 w-full lg:w-[620px] self-stretch gap-20">
+      <div className="flex flex-col items-center lg:items-start justify-between py-4 lg:py-10 lg:pl-8 px-6 w-full lg:w-[620px] self-stretch gap-8 lg:gap-20">
         <div className="flex flex-col gap-[8px] items-center lg:items-start w-full text-center lg:text-left">
           <div className="bg-[#dbe7fb] px-[16px] py-[8px] rounded-[24px] self-center lg:self-start">
             <p className="font-medium text-[14px] text-[#6788ec]">Система всегда под рукой</p>

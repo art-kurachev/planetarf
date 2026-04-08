@@ -35,7 +35,7 @@ export default function Testimonials() {
       </div>
 
       {/* Bento grid */}
-      <div className="flex flex-col gap-[32px] w-full">
+      <div className="flex flex-col gap-4 md:gap-[32px] w-full">
         {/* Row 1: 3 колонки, 3-я высокая */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {/* Карточка 1 */}
@@ -70,7 +70,7 @@ export default function Testimonials() {
             </div>
           </div>
           {/* Карточка 3 — высокая, row-span-2 */}
-          <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px] xl:row-span-2">
+          <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px] md:col-span-2 xl:col-span-1 xl:row-span-2">
             <p className="font-normal text-[14px] lg:text-[16px] text-[#2e3345] leading-[1.6]">
               «Интеграция с&nbsp;нашей 1С прошла без остановки работы. Данные по поставщикам, договорам
               и&nbsp;оплатам синхронизируются автоматически»
