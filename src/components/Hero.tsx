@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 const img2 = "/figma-assets/52cc731f-9f1d-4238-9924-6b4367cebea6.png";
 const img3 = "/figma-assets/hero-uk-card-phone-v2.png";
 const img5 = "/figma-assets/51ea8e38-decf-41ba-9833-a498bbfde9ac.png";
@@ -10,6 +12,28 @@ type HeroProps = {
 };
 
 export default function Hero({ onOpenDemo }: HeroProps) {
+  const cardsScrollerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const scroller = cardsScrollerRef.current;
+    if (!scroller) return;
+
+    const onWheel = (event: WheelEvent) => {
+      if (window.innerWidth >= 640) return;
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+
+      const maxLeft = scroller.scrollWidth - scroller.clientWidth;
+      if (maxLeft <= 0) return;
+
+      event.preventDefault();
+      scroller.scrollLeft = Math.max(0, Math.min(maxLeft, scroller.scrollLeft + event.deltaY));
+    };
+
+    scroller.addEventListener("wheel", onWheel, { passive: false });
+    return () => {
+      scroller.removeEventListener("wheel", onWheel);
+    };
+  }, []);
 
   return (
     <div className="flex flex-col gap-10 lg:gap-14 items-center w-full max-w-[1224px] mx-auto px-0 lg:px-8">
@@ -46,8 +70,8 @@ export default function Hero({ onOpenDemo }: HeroProps) {
 
       {/* 4 карточки */}
       <div
-        className="hide-scrollbar flex sm:grid sm:grid-cols-2 xl:grid-cols-4 gap-[8px] w-full overflow-x-auto snap-x snap-mandatory px-4 sm:overflow-visible"
-        style={{ overflow: "visible" }}
+        ref={cardsScrollerRef}
+        className="hide-scrollbar flex sm:grid sm:grid-cols-2 xl:grid-cols-4 gap-[8px] w-full overflow-x-auto overflow-y-hidden snap-none sm:snap-x sm:snap-mandatory pl-4 pr-4 sm:overflow-visible touch-pan-x overscroll-x-contain [-webkit-overflow-scrolling:touch]"
       >
         {/* Карточка 1: Инвестиционно-строительные */}
         <div className="snap-start shrink-0 w-[300px] sm:w-auto group bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
