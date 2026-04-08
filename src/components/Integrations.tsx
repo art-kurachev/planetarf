@@ -1,6 +1,6 @@
 "use client";
 
-const imgIntegrations = "/figma-assets/be453586-ac61-47ff-be55-780cc31a9561.png";
+const imgIntegrations = "/figma-assets/itegra.svg";
 
 type IntegrationsProps = {
   onOpenDemo: () => void;

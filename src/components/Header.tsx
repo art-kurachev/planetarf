@@ -36,7 +36,7 @@ export default function Header({ onOpenDemo }: HeaderProps) {
 
   return (
     <header
-      className={`relative px-4 sm:px-6 lg:px-[95px] py-3 lg:py-6 sticky top-0 z-50 w-full transition-[background-color,backdrop-filter] duration-200 ${
+      className={`relative px-4 sm:px-6 lg:px-[95px] py-3 lg:py-4 sticky top-0 z-50 w-full transition-[background-color,backdrop-filter] duration-200 ${
         isScrolled ? "backdrop-blur-[12px] bg-[rgba(255,255,255,0.75)]" : "bg-transparent backdrop-blur-0"
       }`}
     >
