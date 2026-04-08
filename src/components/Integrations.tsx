@@ -9,17 +9,15 @@ type IntegrationsProps = {
 export default function Integrations({ onOpenDemo }: IntegrationsProps) {
 
   return (
-    <div className="flex flex-col lg:flex-row items-center gap-0 lg:gap-0 w-full max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-0 w-full max-w-[1224px] mx-auto px-0 sm:px-6 lg:px-8">
       {/* Левая часть */}
-      <div className="flex flex-col items-start justify-between gap-8 lg:gap-10 py-2 lg:py-8 w-full lg:w-[563px]">
-        <div className="flex flex-col gap-4">
+      <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start justify-between gap-8 lg:gap-10 py-2 lg:py-8 w-full lg:w-[563px] px-6 lg:px-0">
+        <div className="flex flex-col gap-4 items-center lg:items-start text-center lg:text-left">
           <div className="bg-[#dbe7fb] px-[16px] py-[8px] rounded-[24px] w-fit">
             <p className="font-medium text-[14px] text-[#6788ec] w-fit">Экосистема интеграций</p>
           </div>
-          <p className="font-normal text-[clamp(1.75rem,4vw,2rem)] text-[#2e3345] leading-[1.2] max-w-[504px]">
-            Работает с теми инструментами,{" "}
-            <br className="hidden lg:block" />
-            которые у&nbsp;вас уже есть
+          <p className="font-normal text-[28px] lg:text-[clamp(1.75rem,4vw,2rem)] text-[#2e3345] leading-[1.2] max-w-[504px]">
+            Работает с теми инструментами, которые у&nbsp;вас уже есть
           </p>
           <p className="font-normal text-[14px] text-[#2e3345] leading-[1.4]">
             Платформа подключается к&nbsp;1С, CRM, мессенджерам и&nbsp;сервисам учёта{" "}
@@ -40,7 +38,7 @@ export default function Integrations({ onOpenDemo }: IntegrationsProps) {
         </button>
       </div>
       {/* Правая часть — интеграционная схема */}
-      <div className="relative w-full max-w-[620px] aspect-[1366/1046] pointer-events-none">
+      <div className="order-1 lg:order-2 relative w-full max-w-[620px] aspect-[1366/1046] pointer-events-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imgIntegrations}

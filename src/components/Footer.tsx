@@ -59,9 +59,9 @@ export default function Footer({ onSubmitEmail }: FooterProps) {
   };
 
   return (
-    <div id="contact" className="flex flex-col w-full px-4 sm:px-6 scroll-mt-28">
+    <div id="contact" className="flex flex-col w-full px-0 sm:px-6 scroll-mt-28">
       {/* CTA секция */}
-      <div className="relative min-h-[540px] lg:min-h-[601px] w-full rounded-t-[32px] lg:rounded-t-[56px] overflow-clip flex flex-col items-center justify-center px-4 sm:px-8 lg:px-20 py-10 lg:py-14">
+      <div className="relative min-h-[540px] lg:min-h-[601px] w-full rounded-t-[32px] lg:rounded-t-[56px] overflow-clip flex flex-col items-center justify-center px-6 sm:px-8 lg:px-20 py-8 lg:py-14">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imgBg}
@@ -142,8 +142,8 @@ export default function Footer({ onSubmitEmail }: FooterProps) {
         </div>
       </div>
       {/* Нижняя строка */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 px-2 sm:px-6 lg:px-14 py-6 w-full">
-        <div className="flex flex-row items-center self-stretch">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 sm:px-6 lg:px-14 py-4 sm:py-6 w-full">
+        <div className="hidden sm:flex flex-row items-center self-stretch">
           <div className="aspect-[300/75] h-full relative">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={imgFooterLogo} alt="Digitonic" className="absolute block max-w-none size-full" />

@@ -20,27 +20,27 @@ const clientLogos = [
 
 export default function Testimonials() {
   return (
-    <div className="flex flex-col gap-10 items-center w-full max-w-[1224px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col gap-10 items-center w-full max-w-[1224px] mx-auto px-6 lg:px-8">
       {/* Заголовок */}
       <div className="flex flex-col gap-[8px] items-center w-full">
         <div className="bg-[#dbe7fb] px-[16px] py-[8px] rounded-[24px]">
           <p className="font-medium text-[14px] text-[#6788ec]">Отзывы и кейсы</p>
         </div>
-        <p className="font-normal text-[clamp(2rem,6vw,3.5rem)] text-[#2e3345] text-center leading-[1.2]">
+        <p className="font-normal text-[28px] lg:text-[clamp(2rem,6vw,3.5rem)] text-[#2e3345] text-center leading-[1.2]">
           Что говорят клиенты
         </p>
-        <p className="font-normal text-[clamp(1rem,3vw,1.25rem)] text-[#909abb] text-center leading-[1.3]">
+        <p className="font-normal text-[16px] lg:text-[clamp(1rem,3vw,1.25rem)] text-[#909abb] text-center leading-[1.2]">
           Реальные результаты от&nbsp;строительных компаний, УК и&nbsp;агентств недвижимости
         </p>
       </div>
 
       {/* Bento grid */}
-      <div className="flex flex-col gap-[24px] w-full">
+      <div className="flex flex-col gap-[32px] w-full">
         {/* Row 1: 3 колонки, 3-я высокая */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {/* Карточка 1 */}
-          <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[32px] flex flex-col justify-between gap-[24px]">
-            <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
+          <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px]">
+            <p className="font-normal text-[14px] lg:text-[16px] text-[#2e3345] leading-[1.6]">
               «Planeta ERP позволила нам объединить снабжение, бюджетирование и&nbsp;документооборот в
               одной системе. Время согласования счётов сократилось с&nbsp;3&nbsp;дней до&nbsp;нескольких часов»
             </p>
@@ -54,8 +54,8 @@ export default function Testimonials() {
             </div>
           </div>
           {/* Карточка 2 */}
-          <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[32px] flex flex-col justify-between gap-[24px]">
-            <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
+          <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px]">
+            <p className="font-normal text-[14px] lg:text-[16px] text-[#2e3345] leading-[1.6]">
               «Раньше сводные отчёты по объектам готовились вручную и занимали весь понедельник.
               Теперь дашборд обновляется автоматически — руководство видит актуальную картину в&nbsp;
               любой момент»
@@ -71,7 +71,7 @@ export default function Testimonials() {
           </div>
           {/* Карточка 3 — высокая, row-span-2 */}
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px] xl:row-span-2">
-            <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
+            <p className="font-normal text-[14px] lg:text-[16px] text-[#2e3345] leading-[1.6]">
               «Интеграция с&nbsp;нашей 1С прошла без остановки работы. Данные по поставщикам, договорам
               и&nbsp;оплатам синхронизируются автоматически»
             </p>
@@ -86,7 +86,7 @@ export default function Testimonials() {
           </div>
           {/* Карточка 4 — col-span-2 */}
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px] md:col-span-2 xl:h-[236px]">
-            <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
+            <p className="font-normal text-[14px] lg:text-[16px] text-[#2e3345] leading-[1.6]">
               «СКУД-модуль закрыл давнюю проблему с&nbsp;учётом рабочего времени на&nbsp;объектах. Теперь у
               нас точные данные по каждому сотруднику без ручной сверки»
             </p>
@@ -102,9 +102,9 @@ export default function Testimonials() {
         </div>
 
         {/* Row 2 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 xl:h-[236px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 xl:h-[236px]">
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px]">
-            <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
+            <p className="font-normal text-[14px] lg:text-[16px] text-[#2e3345] leading-[1.6]">
               «Система помогла выстроить контроль над закупками: видим остатки на&nbsp;складах, статус
               заявок и&nbsp;плановые сроки поставок. Перерасход материалов снизился на&nbsp;18%»
             </p>
@@ -118,7 +118,7 @@ export default function Testimonials() {
             </div>
           </div>
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px]">
-            <p className="font-normal text-[16px] text-[#2e3345] leading-[1.6]">
+            <p className="font-normal text-[14px] lg:text-[16px] text-[#2e3345] leading-[1.6]">
               «Planeta ERP — это не&nbsp;просто CRM, это операционная система для&nbsp;стройки. Мы управляем
               12&nbsp;объектами одновременно и&nbsp;не&nbsp;теряем ни&nbsp;одной детали»
             </p>
@@ -135,7 +135,7 @@ export default function Testimonials() {
       </div>
 
       {/* Marquee логотипы клиентов */}
-      <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+      <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
         <div className="flex w-max gap-[16px] animate-marquee pr-[16px]">
           {[...clientLogos, ...clientLogos].map((logo, i) => (
             <div

@@ -2,7 +2,8 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: white; font-family: var(--font-manrope), sans-serif; }
+body { background: white; font-family: var(--font-manrope), sans-serif; overflow-x: hidden; }
+button:not(:disabled) { cursor: pointer; }
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -22,4 +23,14 @@ body { background: white; font-family: var(--font-manrope), sans-serif; }
 .animate-marquee {
   animation: marquee 80s linear infinite;
   will-change: transform;
+}
+
+/* Hide scrollbar but keep element scrollable */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

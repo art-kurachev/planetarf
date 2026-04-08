@@ -36,7 +36,7 @@ export default function Header({ onOpenDemo }: HeaderProps) {
 
   return (
     <header
-      className={`relative px-4 sm:px-6 lg:px-[95px] py-4 lg:py-6 sticky top-0 z-50 w-full transition-[background-color,backdrop-filter] duration-200 ${
+      className={`relative px-4 sm:px-6 lg:px-[95px] py-3 lg:py-6 sticky top-0 z-50 w-full transition-[background-color,backdrop-filter] duration-200 ${
         isScrolled ? "backdrop-blur-[12px] bg-[rgba(255,255,255,0.75)]" : "bg-transparent backdrop-blur-0"
       }`}
     >
@@ -46,7 +46,7 @@ export default function Header({ onOpenDemo }: HeaderProps) {
         <img
           src={logoUrl}
           alt="Planeta ERP"
-          className="h-[40px] w-auto shrink-0"
+          className="h-[32px] lg:h-[40px] w-auto shrink-0"
           style={{ aspectRatio: "300/75" }}
         />
 
@@ -66,15 +66,15 @@ export default function Header({ onOpenDemo }: HeaderProps) {
 
         {/* Buttons */}
         <div className="ml-auto flex gap-2 items-center shrink-0">
-          <button className="backdrop-blur-[3px] border-[1.5px] border-[#e9edf4] px-4 py-2 lg:px-6 lg:py-3 rounded-[24px] font-medium text-[14px] text-[#2e3345] whitespace-nowrap transition-all duration-200 hover:bg-[#f3f7ff] hover:border-[#c4d3ef] hover:-translate-y-[2px] hover:shadow-[0px_10px_20px_rgba(103,136,236,0.16)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40">
+          <button className="hidden sm:block backdrop-blur-[3px] border-[1.5px] border-[#e9edf4] px-4 py-2 lg:px-6 lg:py-3 rounded-[24px] font-medium text-[14px] text-[#2e3345] whitespace-nowrap transition-all duration-200 hover:bg-[#f3f7ff] hover:border-[#c4d3ef] hover:-translate-y-[2px] hover:shadow-[0px_10px_20px_rgba(103,136,236,0.16)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40">
             Войти
           </button>
           <button
             type="button"
             onClick={onOpenDemo}
-            className="hidden sm:block bg-[#6788ec] px-4 py-2 lg:px-6 lg:py-3 rounded-[24px] font-medium text-[14px] text-white whitespace-nowrap transition-all duration-200 hover:bg-[#4f74e2] hover:-translate-y-[2px] hover:shadow-[0px_12px_24px_rgba(103,136,236,0.32)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40"
+            className="bg-[#6788ec] px-4 py-2 lg:px-6 lg:py-3 rounded-[24px] font-medium text-[14px] text-white whitespace-nowrap transition-all duration-200 hover:bg-[#4f74e2] hover:-translate-y-[2px] hover:shadow-[0px_12px_24px_rgba(103,136,236,0.32)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40"
           >
-            Демо-показ
+            Демо
           </button>
         </div>
       </div>
