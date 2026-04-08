@@ -1,4 +1,4 @@
-const imgPhone = "/figma-assets/Group_2087325871-10f056f0-752c-47a9-bd7f-b2103a51f968.png";
+const imgPhone = "/figma-assets/frame-2087325872.svg";
 const imgGooglePlay = "/figma-assets/3143c6af-eef9-4576-9746-42f5f1a19e63.svg";
 const imgAppStore = "/figma-assets/1db8887b-7531-4859-a14c-9f424416efc7.svg";
 
@@ -7,12 +7,12 @@ export default function Features() {
     <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-start justify-center w-full h-fit max-w-[1224px] mx-auto px-4 lg:px-8">
       {/* Левая часть — телефон */}
       <div className="w-full lg:flex-[1_0_0] relative z-0 flex justify-center lg:justify-center items-start">
-        <div className="w-full max-w-[240px] lg:max-w-[280px] pointer-events-none origin-center">
+        <div className="relative w-full max-w-[240px] lg:max-w-[280px] pointer-events-none origin-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={imgPhone}
             alt="Мобильное приложение"
-            className="w-full h-auto object-contain"
+            className="block w-full h-auto object-contain rounded-[36px]"
             style={{
               filter:
                 "drop-shadow(0 10px 22px rgba(0, 0, 0, 0.06)) drop-shadow(0 39px 39px rgba(0, 0, 0, 0.05)) drop-shadow(0 88px 53px rgba(0, 0, 0, 0.03)) drop-shadow(0 157px 63px rgba(0, 0, 0, 0.01)) drop-shadow(0 246px 69px rgba(0, 0, 0, 0.00))",

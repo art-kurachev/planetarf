@@ -35,7 +35,7 @@ export default function Testimonials() {
       </div>
 
       {/* Bento grid */}
-      <div className="flex flex-col gap-4 md:gap-[32px] w-full">
+      <div className="flex flex-col gap-4 md:gap-4 w-full">
         {/* Row 1: 3 колонки, 3-я высокая */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {/* Карточка 1 */}

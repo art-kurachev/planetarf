@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { type KeyboardEvent, useEffect, useRef } from "react";
 
 const img2 = "/figma-assets/52cc731f-9f1d-4238-9924-6b4367cebea6.png";
 const img3 = "/figma-assets/hero-uk-card-phone-v2.png";
@@ -13,6 +13,12 @@ type HeroProps = {
 
 export default function Hero({ onOpenDemo }: HeroProps) {
   const cardsScrollerRef = useRef<HTMLDivElement | null>(null);
+  const handleCardKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      onOpenDemo();
+    }
+  };
 
   useEffect(() => {
     const scroller = cardsScrollerRef.current;
@@ -84,7 +90,13 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           className="hide-scrollbar flex sm:grid sm:grid-cols-2 xl:grid-cols-4 gap-[8px] w-full overflow-x-auto overflow-y-hidden snap-none sm:snap-x sm:snap-mandatory pl-4 pr-4 sm:overflow-visible touch-pan-x overscroll-x-contain [-webkit-overflow-scrolling:touch]"
         >
         {/* Карточка 1: Инвестиционно-строительные */}
-        <div className="snap-start shrink-0 w-[300px] sm:w-auto group bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={onOpenDemo}
+          onKeyDown={handleCardKeyDown}
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+        >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
               Инвестиционно-
@@ -113,7 +125,13 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         </div>
 
         {/* Карточка 2: УК ЖКХ */}
-        <div className="snap-start shrink-0 w-[300px] sm:w-auto group bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={onOpenDemo}
+          onKeyDown={handleCardKeyDown}
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+        >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
               Управляющие
@@ -143,7 +161,13 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         </div>
 
         {/* Карточка 3: Агентства недвижимости */}
-        <div className="snap-start shrink-0 w-[300px] sm:w-auto group bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={onOpenDemo}
+          onKeyDown={handleCardKeyDown}
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+        >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
               Агентства недвижимости
@@ -171,7 +195,13 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         </div>
 
         {/* Карточка 4: Корпоративный */}
-        <div className="snap-start shrink-0 w-[300px] sm:w-auto group bg-white border border-[#e9edf4] rounded-[24px] flex flex-col gap-4 pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]">
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={onOpenDemo}
+          onKeyDown={handleCardKeyDown}
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col gap-4 pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+        >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
               Корпоративный сектор
