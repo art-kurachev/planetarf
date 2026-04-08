@@ -123,11 +123,11 @@ export default function Footer({ onSubmitEmail }: FooterProps) {
           </div>
           {/* Кнопки */}
           <div className="flex gap-[8px] items-center justify-center w-full">
-            <button className="bg-[#1e212b] rounded-[28px] size-[56px] flex items-center justify-center relative transition-all duration-200 hover:bg-[#343b4f] hover:-translate-y-[2px] hover:shadow-[0px_10px_22px_rgba(30,33,43,0.35)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e212b]/30">
+            <button className="hidden bg-[#1e212b] rounded-[28px] size-[56px] items-center justify-center relative transition-all duration-200 hover:bg-[#343b4f] hover:-translate-y-[2px] hover:shadow-[0px_10px_22px_rgba(30,33,43,0.35)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e212b]/30">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={imgTelegram} alt="Telegram" className="absolute size-[24px] left-[14px] top-[17px]" />
             </button>
-            <button className="bg-[#1e212b] flex gap-[8px] items-center justify-center pl-[32px] pr-[24px] py-[16px] rounded-[28px] text-white font-medium text-[16px] whitespace-nowrap transition-all duration-200 hover:bg-[#343b4f] hover:-translate-y-[2px] hover:shadow-[0px_10px_22px_rgba(30,33,43,0.35)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e212b]/30">
+            <button className="hidden bg-[#1e212b] gap-[8px] items-center justify-center pl-[32px] pr-[24px] py-[16px] rounded-[28px] text-white font-medium text-[16px] whitespace-nowrap transition-all duration-200 hover:bg-[#343b4f] hover:-translate-y-[2px] hover:shadow-[0px_10px_22px_rgba(30,33,43,0.35)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e212b]/30">
               Презентация
               <div className="overflow-clip size-[24px] relative">
                 <div className="absolute inset-[12.5%]">
