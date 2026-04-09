@@ -40,6 +40,10 @@ const heroStats = [
 
 export default function Hero({ onOpenDemo }: HeroProps) {
   const cardsScrollerRef = useRef<HTMLDivElement | null>(null);
+  const isDraggingRef = useRef(false);
+  const dragStartXRef = useRef(0);
+  const dragStartScrollLeftRef = useRef(0);
+  const didDragRef = useRef(false);
   const handleCardKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
@@ -52,19 +56,67 @@ export default function Hero({ onOpenDemo }: HeroProps) {
     if (!scroller) return;
 
     const onWheel = (event: WheelEvent) => {
-      if (window.innerWidth >= 640) return;
-      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+      const maxLeft = scroller.scrollWidth - scroller.clientWidth;
+      if (maxLeft <= 0) return;
+
+      const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+      event.preventDefault();
+      event.stopPropagation();
+      scroller.scrollLeft = Math.max(0, Math.min(maxLeft, scroller.scrollLeft + delta));
+    };
+
+    const onPointerDown = (event: PointerEvent) => {
+      if (event.pointerType !== "mouse") return;
 
       const maxLeft = scroller.scrollWidth - scroller.clientWidth;
       if (maxLeft <= 0) return;
 
+      isDraggingRef.current = true;
+      didDragRef.current = false;
+      dragStartXRef.current = event.clientX;
+      dragStartScrollLeftRef.current = scroller.scrollLeft;
+      scroller.classList.add("cursor-grabbing");
+      scroller.setPointerCapture(event.pointerId);
+    };
+
+    const onPointerMove = (event: PointerEvent) => {
+      if (!isDraggingRef.current) return;
+
+      const deltaX = event.clientX - dragStartXRef.current;
+      if (Math.abs(deltaX) > 3) didDragRef.current = true;
+
+      const nextLeft = dragStartScrollLeftRef.current - deltaX;
+      const maxLeft = scroller.scrollWidth - scroller.clientWidth;
+      scroller.scrollLeft = Math.max(0, Math.min(maxLeft, nextLeft));
+    };
+
+    const stopDragging = () => {
+      isDraggingRef.current = false;
+      scroller.classList.remove("cursor-grabbing");
+    };
+
+    const onClickCapture = (event: MouseEvent) => {
+      if (!didDragRef.current) return;
       event.preventDefault();
-      scroller.scrollLeft = Math.max(0, Math.min(maxLeft, scroller.scrollLeft + event.deltaY));
+      event.stopPropagation();
+      didDragRef.current = false;
     };
 
     scroller.addEventListener("wheel", onWheel, { passive: false });
+    scroller.addEventListener("pointerdown", onPointerDown);
+    scroller.addEventListener("pointermove", onPointerMove);
+    scroller.addEventListener("pointerup", stopDragging);
+    scroller.addEventListener("pointercancel", stopDragging);
+    scroller.addEventListener("lostpointercapture", stopDragging);
+    scroller.addEventListener("click", onClickCapture, true);
     return () => {
       scroller.removeEventListener("wheel", onWheel);
+      scroller.removeEventListener("pointerdown", onPointerDown);
+      scroller.removeEventListener("pointermove", onPointerMove);
+      scroller.removeEventListener("pointerup", stopDragging);
+      scroller.removeEventListener("pointercancel", stopDragging);
+      scroller.removeEventListener("lostpointercapture", stopDragging);
+      scroller.removeEventListener("click", onClickCapture, true);
     };
   }, []);
 
@@ -162,7 +214,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         {/* 4 карточки */}
         <motion.div
           ref={cardsScrollerRef}
-          className="hide-scrollbar flex sm:grid sm:grid-cols-2 xl:grid-cols-4 gap-[8px] w-full overflow-x-auto overflow-y-hidden snap-none sm:snap-x sm:snap-mandatory pl-4 pr-4 sm:overflow-visible touch-pan-x overscroll-x-contain [-webkit-overflow-scrolling:touch]"
+          className="hide-scrollbar flex sm:grid sm:grid-cols-2 xl:grid-cols-4 gap-[8px] w-full overflow-x-auto overflow-y-hidden snap-none sm:snap-x sm:snap-mandatory pl-4 pr-4 sm:overflow-visible touch-pan-x overscroll-x-contain [-webkit-overflow-scrolling:touch] cursor-grab sm:cursor-default select-none"
           variants={containerReveal}
         >
         {/* Карточка 1: Инвестиционно-строительные */}

@@ -24,7 +24,7 @@ const clientLogos = [
 export default function Testimonials() {
   return (
     <motion.div
-      className="flex flex-col gap-10 items-center w-full max-w-[1224px] mx-auto px-6 lg:px-8"
+      className="flex flex-col gap-10 items-center w-full max-w-[1224px] mx-auto px-4 lg:px-8"
       variants={containerReveal}
       initial="hidden"
       whileInView="show"
