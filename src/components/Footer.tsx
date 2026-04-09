@@ -59,7 +59,7 @@ export default function Footer({ onSubmitEmail }: FooterProps) {
   };
 
   return (
-    <div id="contact" className="flex flex-col w-full px-0 sm:px-6 scroll-mt-28">
+    <div id="contact" className="flex flex-col w-full max-w-[1730px] mx-auto px-0 sm:px-6 scroll-mt-28">
       {/* CTA секция */}
       <div className="relative min-h-[540px] lg:min-h-[601px] w-full rounded-t-[32px] lg:rounded-t-[56px] overflow-clip flex flex-col items-center justify-center px-6 sm:px-8 lg:px-20 py-8 lg:py-14">
         {/* eslint-disable-next-line @next/next/no-img-element */}

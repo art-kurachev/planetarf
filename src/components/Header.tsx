@@ -40,7 +40,7 @@ export default function Header({ onOpenDemo }: HeaderProps) {
         isScrolled ? "backdrop-blur-[12px] bg-[rgba(255,255,255,0.75)]" : "bg-transparent backdrop-blur-0"
       }`}
     >
-      <div className="flex items-center gap-4 w-full">
+      <div className="flex items-center gap-4 w-full max-w-[1730px] mx-auto">
         {/* Logo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

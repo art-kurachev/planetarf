@@ -9,6 +9,8 @@ import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import DemoRequestModal from "@/components/DemoRequestModal";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://planetarf.ru";
+
 export default function Home() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [prefillEmail, setPrefillEmail] = useState("");
@@ -30,8 +32,41 @@ export default function Home() {
     });
   }, []);
 
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Planeta ERP",
+    url: siteUrl,
+    logo: `${siteUrl}/favicon.svg`,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+7-910-466-95-25",
+        contactType: "sales",
+        areaServed: "RU",
+        availableLanguage: ["ru"],
+      },
+    ],
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Planeta ERP",
+    url: siteUrl,
+    inLanguage: "ru-RU",
+  };
+
   return (
     <main className="bg-white min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
       <Header onOpenDemo={() => handleOpenDemo()} />
       {/* Hero с декоративным фоном */}
       <section id="app" className="relative overflow-x-clip overflow-y-visible scroll-mt-28 pt-[56px] sm:pt-12 lg:pt-14 pb-[56px] sm:pb-20 lg:pb-28">

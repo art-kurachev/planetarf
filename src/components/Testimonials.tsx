@@ -24,7 +24,7 @@ export default function Testimonials() {
       {/* Заголовок */}
       <div className="flex flex-col gap-[8px] items-center w-full">
         <div className="bg-[#dbe7fb] px-[16px] py-[8px] rounded-[24px]">
-          <p className="font-medium text-[14px] text-[#6788ec]">Отзывы и кейсы</p>
+          <p className="font-medium text-[14px] text-[#6788ec]">Отзывы и&nbsp;кейсы</p>
         </div>
         <p className="font-normal text-[28px] lg:text-[clamp(2rem,6vw,3.5rem)] text-[#2e3345] text-center leading-[1.2]">
           Что говорят клиенты
@@ -56,7 +56,7 @@ export default function Testimonials() {
           {/* Карточка 2 */}
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px]">
             <p className="font-normal text-[14px] lg:text-[16px] text-[#2e3345] leading-[1.6]">
-              «Раньше сводные отчёты по объектам готовились вручную и занимали весь понедельник.
+              «Раньше сводные отчёты по&nbsp;объектам готовились вручную и&nbsp;занимали весь понедельник.
               Теперь дашборд обновляется автоматически — руководство видит актуальную картину в&nbsp;
               любой момент»
             </p>
@@ -72,7 +72,7 @@ export default function Testimonials() {
           {/* Карточка 3 — высокая, row-span-2 */}
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px] md:col-span-2 xl:col-span-1 xl:row-span-2">
             <p className="font-normal text-[14px] lg:text-[16px] text-[#2e3345] leading-[1.6]">
-              «Интеграция с&nbsp;нашей 1С прошла без остановки работы. Данные по поставщикам, договорам
+              «Интеграция с&nbsp;нашей 1С прошла без&nbsp;остановки работы. Данные по&nbsp;поставщикам, договорам
               и&nbsp;оплатам синхронизируются автоматически»
             </p>
             <div className="flex gap-[8px] items-center">
@@ -87,15 +87,15 @@ export default function Testimonials() {
           {/* Карточка 4 — col-span-2 */}
           <div className="bg-[#f8fafc] border border-[#e9edf4] rounded-[32px] p-[24px] lg:p-[32px] flex flex-col justify-between gap-[24px] md:col-span-2 xl:h-[236px]">
             <p className="font-normal text-[14px] lg:text-[16px] text-[#2e3345] leading-[1.6]">
-              «СКУД-модуль закрыл давнюю проблему с&nbsp;учётом рабочего времени на&nbsp;объектах. Теперь у
-              нас точные данные по каждому сотруднику без ручной сверки»
+              «СКУД-модуль закрыл давнюю проблему с&nbsp;учётом рабочего времени на&nbsp;объектах. Теперь у&nbsp;
+              нас точные данные по&nbsp;каждому сотруднику без&nbsp;ручной сверки»
             </p>
             <div className="flex gap-[8px] items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={avatar4} alt="Андрей К." className="size-[44px] rounded-full" />
               <div>
                 <p className="font-medium text-[16px] text-[#2e3345]">Андрей К.</p>
-                <p className="text-[12px] text-[#909abb]">Директор по строительству</p>
+                <p className="text-[12px] text-[#909abb]">Директор по&nbsp;строительству</p>
               </div>
             </div>
           </div>

@@ -253,7 +253,7 @@ export default function DemoRequestModal({
                   ) : null}
                 </span>
                 <span className="text-[14px] leading-[1.35] text-[#616f9e]">
-                  Я&nbsp;даю своё Согласие на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;Политикой в
+                  Я&nbsp;даю своё Согласие на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;Политикой в&nbsp;
                   отношении обработки персональных данных
                 </span>
               </label>
@@ -262,7 +262,7 @@ export default function DemoRequestModal({
                 disabled={!canSubmit || isSubmitting}
                 className="mt-1 bg-[linear-gradient(90deg,#6788ec_0%,#5b81ec_100%)] px-6 py-5 rounded-[32px] text-white font-medium text-[16px] leading-[16px] shadow-[0px_9px_9px_rgba(103,136,236,0.16)] transition-all duration-200 hover:brightness-95 hover:-translate-y-[2px] hover:shadow-[0px_16px_28px_rgba(103,136,236,0.34)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40 disabled:cursor-not-allowed disabled:brightness-90 disabled:transform-none"
               >
-                {isSubmitting ? "Отправляем..." : "Записаться на демо-презентацию"}
+                {isSubmitting ? "Отправляем..." : "Записаться на\u00A0демо-презентацию"}
               </button>
             </form>
           </>
@@ -276,7 +276,7 @@ export default function DemoRequestModal({
                 на демонстрацию системы «Планета»
               </p>
               <p className="w-full text-[14px] leading-[1.4] text-[#616f9e]">
-                Обычно отвечаем в течение
+                Обычно отвечаем в&nbsp;течение
                 <br />
                 15–30 минут в&nbsp;рабочее время
               </p>

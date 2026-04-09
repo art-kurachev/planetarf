@@ -5,6 +5,23 @@ html { scroll-behavior: smooth; }
 body { background: white; font-family: var(--font-manrope), sans-serif; overflow-x: hidden; }
 button:not(:disabled) { cursor: pointer; }
 
+/* Prevent text selection and text-caret cursor on static content. */
+body, body * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, li, label {
+  cursor: default;
+}
+
+/* Keep form fields interactive and selectable. */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+  cursor: text;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
