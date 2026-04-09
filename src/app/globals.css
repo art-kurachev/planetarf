@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { background: white; font-family: var(--font-manrope), sans-serif; overflow-x: hidden; }
+html {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+body {
+  background: white;
+  font-family: var(--font-manrope), sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 button:not(:disabled) { cursor: pointer; }
 
 /* Prevent text selection and text-caret cursor on static content. */
@@ -81,6 +89,32 @@ input, textarea, [contenteditable="true"] {
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+/* Custom page scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.85) transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(148, 163, 184, 0.9) 0%, rgba(100, 116, 139, 0.9) 100%);
+  border-radius: 999px;
+  border: 0;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(148, 163, 184, 1) 0%, rgba(100, 116, 139, 1) 100%);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -42,7 +42,7 @@ export default function Header({ onOpenDemo }: HeaderProps) {
         isScrolled ? "backdrop-blur-[12px] bg-[rgba(255,255,255,0.75)]" : "bg-transparent backdrop-blur-0"
       }`}
       style={{ willChange: "transform", transform: "translateZ(0)" }}
-      initial={prefersReducedMotion ? false : { y: -56 }}
+      initial={prefersReducedMotion ? false : { y: -120 }}
       animate={prefersReducedMotion ? undefined : { y: 0 }}
       transition={
         prefersReducedMotion
