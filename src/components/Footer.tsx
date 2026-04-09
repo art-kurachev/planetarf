@@ -1,6 +1,8 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { containerReveal, itemReveal, revealViewport } from "@/components/motion";
 
 const imgBg = "/figma-assets/86391a72-e3d5-4dc2-904a-4b57f7df5231.png";
 const imgLogo = "/figma-assets/5e1996ad-28a2-4584-9916-24a1f2135a85.svg";
@@ -59,9 +61,19 @@ export default function Footer({ onSubmitEmail }: FooterProps) {
   };
 
   return (
-    <div id="contact" className="flex flex-col w-full max-w-[1730px] mx-auto px-0 sm:px-6 scroll-mt-28">
+    <motion.div
+      id="contact"
+      className="flex flex-col w-full max-w-[1730px] mx-auto px-0 sm:px-6 scroll-mt-28"
+      variants={containerReveal}
+      initial="hidden"
+      whileInView="show"
+      viewport={revealViewport}
+    >
       {/* CTA секция */}
-      <div className="relative min-h-[540px] lg:min-h-[601px] w-full rounded-t-[32px] lg:rounded-t-[56px] overflow-clip flex flex-col items-center justify-center px-6 sm:px-8 lg:px-20 py-8 lg:py-14">
+      <motion.div
+        className="relative min-h-[540px] lg:min-h-[601px] w-full rounded-t-[32px] lg:rounded-t-[56px] overflow-clip flex flex-col items-center justify-center px-6 sm:px-8 lg:px-20 py-8 lg:py-14"
+        variants={itemReveal}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imgBg}
@@ -140,9 +152,12 @@ export default function Footer({ onSubmitEmail }: FooterProps) {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
       {/* Нижняя строка */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 sm:px-6 lg:px-14 py-4 sm:py-6 w-full">
+      <motion.div
+        className="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 sm:px-6 lg:px-14 py-4 sm:py-6 w-full"
+        variants={itemReveal}
+      >
         <div className="hidden sm:flex flex-row items-center self-stretch">
           <div className="aspect-[300/75] h-full relative">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -152,7 +167,7 @@ export default function Footer({ onSubmitEmail }: FooterProps) {
         <p className="font-normal text-[14px] sm:text-[18px] text-[#2e3345] opacity-80 leading-[1.6] text-center sm:text-right">
           © 2020 - 2026 Digital Агенство «digitonic»
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

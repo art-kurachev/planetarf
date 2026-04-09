@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { containerReveal, itemReveal, revealViewport } from "@/components/motion";
+
 const avatar1 = "/figma-assets/98649603-4477-4cf4-be37-632983203c4c.png";
 const avatar2 = "/figma-assets/b6d08d95-22b6-4005-a8bf-301291f81b32.png";
 const avatar3 = "/figma-assets/7b96c264-6b67-49cf-b622-2bafc84b8620.png";
@@ -20,9 +23,15 @@ const clientLogos = [
 
 export default function Testimonials() {
   return (
-    <div className="flex flex-col gap-10 items-center w-full max-w-[1224px] mx-auto px-6 lg:px-8">
+    <motion.div
+      className="flex flex-col gap-10 items-center w-full max-w-[1224px] mx-auto px-6 lg:px-8"
+      variants={containerReveal}
+      initial="hidden"
+      whileInView="show"
+      viewport={revealViewport}
+    >
       {/* Заголовок */}
-      <div className="flex flex-col gap-[8px] items-center w-full">
+      <motion.div className="flex flex-col gap-[8px] items-center w-full" variants={itemReveal}>
         <div className="bg-[#dbe7fb] px-[16px] py-[8px] rounded-[24px]">
           <p className="font-medium text-[14px] text-[#6788ec]">Отзывы и&nbsp;кейсы</p>
         </div>
@@ -32,10 +41,10 @@ export default function Testimonials() {
         <p className="font-normal text-[16px] lg:text-[clamp(1rem,3vw,1.25rem)] text-[#909abb] text-center leading-[1.2]">
           Реальные результаты от&nbsp;строительных компаний, УК и&nbsp;агентств недвижимости
         </p>
-      </div>
+      </motion.div>
 
       {/* Bento grid */}
-      <div className="flex flex-col gap-4 md:gap-4 w-full">
+      <motion.div className="flex flex-col gap-4 md:gap-4 w-full" variants={itemReveal}>
         {/* Row 1: 3 колонки, 3-я высокая */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {/* Карточка 1 */}
@@ -132,10 +141,13 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Marquee логотипы клиентов */}
-      <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+      <motion.div
+        className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
+        variants={itemReveal}
+      >
         <div className="flex w-max gap-[16px] animate-marquee pr-[16px]">
           {[...clientLogos, ...clientLogos].map((logo, i) => (
             <div
@@ -152,7 +164,7 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

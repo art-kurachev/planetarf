@@ -1,6 +1,8 @@
 "use client";
 
 import { type KeyboardEvent, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { containerReveal, itemReveal, revealViewport } from "@/components/motion";
 
 const img2 = "/figma-assets/hero-segment-3-new.png";
 const img3 = "/figma-assets/hero-segment-2.png";
@@ -10,6 +12,11 @@ const img6 = "/figma-assets/hero-segment-4-new.png";
 type HeroProps = {
   onOpenDemo: () => void;
 };
+
+const cardReveal = {
+  hidden: { opacity: 1 },
+  show: { opacity: 1 },
+} as const;
 
 export default function Hero({ onOpenDemo }: HeroProps) {
   const cardsScrollerRef = useRef<HTMLDivElement | null>(null);
@@ -42,9 +49,15 @@ export default function Hero({ onOpenDemo }: HeroProps) {
   }, []);
 
   return (
-    <div className="flex flex-col gap-10 lg:gap-[120px] items-center w-full max-w-[1224px] mx-auto px-0 lg:px-8">
+    <motion.div
+      className="flex flex-col gap-10 lg:gap-[120px] items-center w-full max-w-[1224px] mx-auto px-0 lg:px-8"
+      variants={containerReveal}
+      initial="hidden"
+      whileInView="show"
+      viewport={revealViewport}
+    >
       {/* Верхний блок: бейдж + заголовок + CTA */}
-      <div className="flex flex-col gap-6 lg:gap-8 items-center w-full py-0 px-6">
+      <motion.div className="flex flex-col gap-6 lg:gap-8 items-center w-full py-0 px-6" variants={itemReveal}>
         <div className="flex flex-col gap-4 items-center w-full">
           {/* Бейдж */}
           <div className="border-[1.5px] border-[#94b7f4] flex items-center justify-center px-[24px] py-[8px] rounded-[24px]">
@@ -72,9 +85,9 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           </button>
           <p className="text-[12px] text-[#616f9e]">Это займет не&nbsp;более 15&nbsp;минут</p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col gap-[24px] items-start w-full">
+      <motion.div className="flex flex-col gap-[24px] items-start w-full" variants={itemReveal}>
         <div className="flex flex-col gap-[8px] items-center w-full px-6 text-center">
           <p className="font-normal text-[32px] lg:text-[48px] text-[#2e3345] leading-[1.2]">
             Кому подойдет экосистема Планета
@@ -85,17 +98,19 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         </div>
 
         {/* 4 карточки */}
-        <div
+        <motion.div
           ref={cardsScrollerRef}
           className="hide-scrollbar flex sm:grid sm:grid-cols-2 xl:grid-cols-4 gap-[8px] w-full overflow-x-auto overflow-y-hidden snap-none sm:snap-x sm:snap-mandatory pl-4 pr-4 sm:overflow-visible touch-pan-x overscroll-x-contain [-webkit-overflow-scrolling:touch]"
+          variants={containerReveal}
         >
         {/* Карточка 1: Инвестиционно-строительные */}
-        <div
+        <motion.div
           role="button"
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[8px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          variants={cardReveal}
         >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
@@ -122,15 +137,16 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               className="block w-full h-full object-cover object-left-top"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Карточка 2: УК ЖКХ */}
-        <div
+        <motion.div
           role="button"
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[8px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          variants={cardReveal}
         >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
@@ -160,15 +176,16 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Карточка 3: Агентства недвижимости */}
-        <div
+        <motion.div
           role="button"
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[8px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          variants={cardReveal}
         >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
@@ -194,15 +211,16 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               className="block w-full h-full object-cover object-left-top"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Карточка 4: Корпоративный */}
-        <div
+        <motion.div
           role="button"
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[8px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          variants={cardReveal}
         >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
@@ -228,9 +246,9 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               className="block w-full h-full object-cover object-left-top"
             />
           </div>
-        </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }

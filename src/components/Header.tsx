@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 const logoUrl = "/figma-assets/396e3568-a5f2-4c8c-9899-cdf4081d4cfa.svg";
 
@@ -17,6 +18,7 @@ type HeaderProps = {
 
 export default function Header({ onOpenDemo }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const onScroll = () => {
@@ -35,10 +37,22 @@ export default function Header({ onOpenDemo }: HeaderProps) {
   };
 
   return (
-    <header
+    <motion.header
       className={`relative px-4 sm:px-6 lg:px-[95px] py-3 lg:py-4 sticky top-0 z-50 w-full transition-[background-color,backdrop-filter] duration-200 ${
         isScrolled ? "backdrop-blur-[12px] bg-[rgba(255,255,255,0.75)]" : "bg-transparent backdrop-blur-0"
       }`}
+      style={{ willChange: "transform", transform: "translateZ(0)" }}
+      initial={prefersReducedMotion ? false : { y: -56 }}
+      animate={prefersReducedMotion ? undefined : { y: 0 }}
+      transition={
+        prefersReducedMotion
+          ? undefined
+          : {
+              delay: 0.5,
+              duration: 0.6,
+              ease: [0.22, 1, 0.36, 1],
+            }
+      }
     >
       <div className="flex items-center gap-4 w-full max-w-[1730px] mx-auto">
         {/* Logo */}
@@ -78,6 +92,6 @@ export default function Header({ onOpenDemo }: HeaderProps) {
           </button>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

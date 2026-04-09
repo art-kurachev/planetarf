@@ -1,12 +1,24 @@
+import { motion } from "framer-motion";
+import { containerReveal, itemReveal, revealViewport } from "@/components/motion";
+
 const imgPhone = "/figma-assets/frame-2087325872.svg";
 const imgGooglePlay = "/figma-assets/3143c6af-eef9-4576-9746-42f5f1a19e63.svg";
 const imgAppStore = "/figma-assets/1db8887b-7531-4859-a14c-9f424416efc7.svg";
 
 export default function Features() {
   return (
-    <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-start justify-center w-full h-fit max-w-[1224px] mx-auto px-4 lg:px-8">
+    <motion.div
+      className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-start justify-center w-full h-fit max-w-[1224px] mx-auto px-4 lg:px-8"
+      variants={containerReveal}
+      initial="hidden"
+      whileInView="show"
+      viewport={revealViewport}
+    >
       {/* Левая часть — телефон */}
-      <div className="w-full lg:flex-[1_0_0] relative z-0 flex justify-center lg:justify-center items-start">
+      <motion.div
+        className="w-full lg:flex-[1_0_0] relative z-0 flex justify-center lg:justify-center items-start"
+        variants={itemReveal}
+      >
         <div className="relative w-full max-w-[240px] lg:max-w-[280px] pointer-events-none origin-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -19,9 +31,12 @@ export default function Features() {
             }}
           />
         </div>
-      </div>
+      </motion.div>
       {/* Правая часть */}
-      <div className="flex flex-col items-center lg:items-start justify-between py-4 lg:py-10 lg:pl-8 px-6 w-full lg:w-[620px] self-stretch gap-8 lg:gap-20">
+      <motion.div
+        className="flex flex-col items-center lg:items-start justify-between py-4 lg:py-10 lg:pl-8 px-6 w-full lg:w-[620px] self-stretch gap-8 lg:gap-20"
+        variants={itemReveal}
+      >
         <div className="flex flex-col gap-[8px] items-center lg:items-start w-full text-center lg:text-left">
           <div className="bg-[#dbe7fb] px-[16px] py-[8px] rounded-[24px] self-center lg:self-start">
             <p className="font-medium text-[14px] text-[#6788ec]">Система всегда под рукой</p>
@@ -58,7 +73,7 @@ export default function Features() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

@@ -1,5 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { containerReveal, itemReveal, revealViewport } from "@/components/motion";
+
 const imgIntegrations = "/figma-assets/itegra.svg";
 
 type IntegrationsProps = {
@@ -9,9 +12,18 @@ type IntegrationsProps = {
 export default function Integrations({ onOpenDemo }: IntegrationsProps) {
 
   return (
-    <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-0 w-full max-w-[1224px] mx-auto px-0 sm:px-6 lg:px-8">
+    <motion.div
+      className="flex flex-col lg:flex-row items-center gap-6 lg:gap-0 w-full max-w-[1224px] mx-auto px-0 sm:px-6 lg:px-8"
+      variants={containerReveal}
+      initial="hidden"
+      whileInView="show"
+      viewport={revealViewport}
+    >
       {/* Левая часть */}
-      <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start justify-between gap-8 lg:gap-10 py-2 lg:py-8 w-full lg:w-[563px] px-6 lg:px-0">
+      <motion.div
+        className="order-2 lg:order-1 flex flex-col items-center lg:items-start justify-between gap-8 lg:gap-10 py-2 lg:py-8 w-full lg:w-[563px] px-6 lg:px-0"
+        variants={itemReveal}
+      >
         <div className="flex flex-col gap-4 items-center lg:items-start text-center lg:text-left">
           <div className="bg-[#dbe7fb] px-[16px] py-[8px] rounded-[24px] w-fit">
             <p className="font-medium text-[14px] text-[#6788ec] w-fit">Экосистема интеграций</p>
@@ -36,16 +48,19 @@ export default function Integrations({ onOpenDemo }: IntegrationsProps) {
         >
           Записаться на&nbsp;демо-показ
         </button>
-      </div>
+      </motion.div>
       {/* Правая часть — интеграционная схема */}
-      <div className="order-1 lg:order-2 relative w-full max-w-[620px] aspect-[1366/1046] pointer-events-none">
+      <motion.div
+        className="order-1 lg:order-2 relative w-full max-w-[620px] aspect-[1366/1046] pointer-events-none"
+        variants={itemReveal}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imgIntegrations}
           alt="Интеграции"
           className="absolute inset-0 w-full h-full object-cover"
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
