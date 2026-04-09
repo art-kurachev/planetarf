@@ -38,10 +38,10 @@ export default function Header({ onOpenDemo }: HeaderProps) {
 
   return (
     <motion.header
-      className={`relative px-4 sm:px-6 lg:px-[95px] py-3 lg:py-4 sticky top-0 z-50 w-full transition-[background-color,backdrop-filter] duration-200 ${
+      className={`fixed top-0 left-0 right-0 px-4 sm:px-6 lg:px-[95px] py-3 lg:py-4 z-50 w-full transition-[background-color,backdrop-filter] duration-200 ${
         isScrolled ? "backdrop-blur-[12px] bg-[rgba(255,255,255,0.75)]" : "bg-transparent backdrop-blur-0"
       }`}
-      style={{ willChange: "transform", transform: "translateZ(0)" }}
+      style={{ willChange: "transform" }}
       initial={prefersReducedMotion ? false : { y: -120 }}
       animate={prefersReducedMotion ? undefined : { y: 0 }}
       transition={

@@ -47,7 +47,7 @@ export default function Features() {
           <p className="font-normal text-[16px] text-[#616f9e] leading-[1.4]">
             Отслеживайте статусы, получайте обновления и&nbsp;будьте в&nbsp;курсе текущей ситуации по
             рабочим вопросам. Подходит для повседневного использования, когда важно быстро
-            понять, что происходит и&nbsp;где требуется внимание.
+            понять, что происходит и&nbsp;где&nbsp;требуется внимание.
           </p>
         </div>
         <div className="flex flex-col gap-[12px] items-center lg:items-start w-full max-w-[416px]">

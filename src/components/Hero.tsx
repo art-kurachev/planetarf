@@ -123,7 +123,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           <p className="font-normal text-[32px] lg:text-[48px] text-[#2e3345] leading-[1.2]">
             Кому подойдет экосистема Планета
           </p>
-          <p className="font-normal text-[16px] lg:text-[20px] text-[#909abb] leading-[1.2]">
+          <p className="font-normal text-[16px] lg:text-[18px] text-[#909abb] leading-[20px]">
             Выберите свой сегмент — покажем, как платформа решает именно ваши задачи
           </p>
         </div>
@@ -160,7 +160,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className="border border-transparent ring-[4px] ring-[#2e3345] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img2}
@@ -234,7 +234,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className="border border-transparent ring-[4px] ring-[#2e3345] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img5}
@@ -269,7 +269,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className="border border-transparent ring-[4px] ring-[#2e3345] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img6}

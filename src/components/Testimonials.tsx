@@ -38,7 +38,7 @@ export default function Testimonials() {
         <p className="font-normal text-[28px] lg:text-[clamp(2rem,6vw,3.5rem)] text-[#2e3345] text-center leading-[1.2]">
           Что говорят клиенты
         </p>
-        <p className="font-normal text-[16px] lg:text-[clamp(1rem,3vw,1.25rem)] text-[#909abb] text-center leading-[1.2]">
+        <p className="font-normal text-[18px] lg:text-[18px] text-[#909abb] text-center leading-[20px]">
           Реальные результаты от&nbsp;строительных компаний, УК и&nbsp;агентств недвижимости
         </p>
       </motion.div>

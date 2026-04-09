@@ -33,7 +33,7 @@ export default function Integrations({ onOpenDemo }: IntegrationsProps) {
           </p>
           <p className="font-normal text-[14px] text-[#2e3345] leading-[1.4]">
             Платформа подключается к&nbsp;1С, CRM, мессенджерам и&nbsp;сервисам учёта{" "}
-            — без замены существующей инфраструктуры и&nbsp;дорогостоящих доработок.
+            — без&nbsp;замены существующей инфраструктуры и&nbsp;дорогостоящих доработок.
           </p>
           <p className="font-normal text-[20px] text-[#2e3345] leading-[1.2]">
             15+ готовых интеграций.
