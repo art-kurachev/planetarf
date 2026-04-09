@@ -63,7 +63,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
 
   return (
     <motion.div
-      className="flex flex-col gap-10 lg:gap-[120px] items-center w-full max-w-[1224px] mx-auto px-0 lg:px-8"
+      className="flex flex-col gap-10 lg:gap-[120px] items-center w-full max-w-[1224px] mx-auto px-0 lg:px-8 pt-[119px]"
       variants={containerReveal}
       initial="hidden"
       whileInView="show"
