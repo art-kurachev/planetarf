@@ -78,7 +78,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
     >
       {/* Верхний блок: бейдж + заголовок + CTA */}
       <motion.div
-        className="flex flex-col gap-6 lg:gap-8 items-center w-full py-0 px-6"
+        className="flex flex-col gap-6 lg:gap-8 items-center w-full pt-0 pb-[80px] lg:pb-0 px-6"
         variants={itemReveal}
         initial="hidden"
         whileInView="show"
@@ -104,7 +104,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
             для&nbsp;управления крупным бизнесом
           </motion.p>
           <motion.div
-            className="w-full max-w-[928px] px-6 lg:px-8 pt-1"
+            className="w-full max-w-[928px] px-6 lg:px-8 pt-4 pb-4"
             variants={introReveal}
             custom={0.26}
           >
