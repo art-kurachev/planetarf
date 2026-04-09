@@ -18,6 +18,19 @@ const cardReveal = {
   show: { opacity: 1 },
 } as const;
 
+const introReveal = {
+  hidden: { opacity: 0, y: 24 },
+  show: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay,
+      duration: 0.65,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
+
 export default function Hero({ onOpenDemo }: HeroProps) {
   const cardsScrollerRef = useRef<HTMLDivElement | null>(null);
   const handleCardKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -57,34 +70,52 @@ export default function Hero({ onOpenDemo }: HeroProps) {
       viewport={revealViewport}
     >
       {/* Верхний блок: бейдж + заголовок + CTA */}
-      <motion.div className="flex flex-col gap-6 lg:gap-8 items-center w-full py-0 px-6" variants={itemReveal}>
+      <motion.div
+        className="flex flex-col gap-6 lg:gap-8 items-center w-full py-0 px-6"
+        variants={itemReveal}
+        initial="hidden"
+        whileInView="show"
+        viewport={revealViewport}
+      >
         <div className="flex flex-col gap-4 items-center w-full">
           {/* Бейдж */}
-          <div className="border-[1.5px] border-[#94b7f4] flex items-center justify-center px-[24px] py-[8px] rounded-[24px]">
+          <motion.div
+            className="border-[1.5px] border-[#94b7f4] flex items-center justify-center px-[24px] py-[8px] rounded-[24px]"
+            variants={introReveal}
+            custom={0.05}
+          >
             <p className="font-medium text-[14px] lg:text-[16px] text-[#6788ec]">Planeta ERP</p>
-          </div>
+          </motion.div>
           {/* H1 */}
-          <p className="font-normal text-[28px] sm:text-[clamp(2rem,6vw,3.5rem)] text-[#2e3345] text-center leading-[1.2] lg:leading-[1.15]">
+          <motion.p
+            className="font-normal text-[28px] sm:text-[clamp(2rem,6vw,3.5rem)] text-[#2e3345] text-center leading-[1.2] lg:leading-[1.15]"
+            variants={introReveal}
+            custom={0.16}
+          >
             Единая цифровая экосистема{" "}
             <br className="hidden lg:block" />
             для&nbsp;управления крупным бизнесом
-          </p>
+          </motion.p>
           {/* Subtitle */}
-          <p className="font-normal text-[16px] sm:text-[clamp(1rem,3.5vw,1.5rem)] text-[#616f9e] text-center leading-[1.4] lg:leading-[1.35] max-w-[840px] px-6">
+          <motion.p
+            className="font-normal text-[16px] sm:text-[clamp(1rem,3.5vw,1.5rem)] text-[#616f9e] text-center leading-[1.4] lg:leading-[1.35] max-w-[840px] px-6"
+            variants={introReveal}
+            custom={0.26}
+          >
             Контроль процессов, денег и&nbsp;сроков в&nbsp;одной системе
-          </p>
+          </motion.p>
         </div>
         {/* CTA */}
-        <div className="flex flex-col gap-[8px] items-center">
+        <motion.div className="flex flex-col gap-[8px] items-center" variants={introReveal} custom={0.36}>
           <button
             type="button"
             onClick={onOpenDemo}
-            className="bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] shadow-[0px_9px_9px_rgba(103,136,236,0.16)] text-white font-medium text-[16px] leading-[16px] transition-all duration-200 hover:bg-[#4f74e2] hover:-translate-y-[2px] hover:shadow-[0px_16px_28px_rgba(103,136,236,0.34)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40"
+            className="hero-cta-shimmer bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] shadow-[0px_9px_9px_rgba(103,136,236,0.16)] text-white font-medium text-[16px] leading-[16px] transition-all duration-200 hover:bg-[#4f74e2] hover:-translate-y-[2px] hover:shadow-[0px_16px_28px_rgba(103,136,236,0.34)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40"
           >
             Записаться на&nbsp;демо-показ
           </button>
           <p className="text-[12px] text-[#616f9e]">Это займет не&nbsp;более 15&nbsp;минут</p>
-        </div>
+        </motion.div>
       </motion.div>
 
       <motion.div className="flex flex-col gap-[24px] items-start w-full" variants={itemReveal}>

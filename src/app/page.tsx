@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Integrations from "@/components/Integrations";
@@ -15,6 +16,10 @@ export default function Home() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [prefillEmail, setPrefillEmail] = useState("");
   const [isDemoModalInitialSuccess, setIsDemoModalInitialSuccess] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  const ellipseLeftY = useTransform(scrollY, [0, 800], [0, 40]);
+  const ellipseRightY = useTransform(scrollY, [0, 800], [0, -30]);
 
   const handleOpenDemo = useCallback((email?: string) => {
     setPrefillEmail(email ?? "");
@@ -71,8 +76,14 @@ export default function Home() {
       {/* Hero с декоративным фоном */}
       <section id="app" className="relative overflow-x-clip overflow-y-visible scroll-mt-28 pt-[56px] sm:pt-12 lg:pt-14 pb-[56px] sm:pb-20 lg:pb-28">
         {/* Декоративные эллипсы */}
-        <div className="absolute top-0 left-0 w-[1109px] h-[1109px] rounded-full bg-[#dbe7fb] opacity-50 blur-[160px] pointer-events-none z-0" />
-        <div className="absolute top-[-272px] right-0 w-[871px] h-[871px] rounded-full bg-[#dbe7fb] opacity-50 blur-[160px] pointer-events-none z-0" />
+        <motion.div
+          className="absolute top-0 left-0 w-[1109px] h-[1109px] rounded-full bg-[#cfe0ff] opacity-70 blur-[128px] pointer-events-none z-0"
+          style={{ y: prefersReducedMotion ? 0 : ellipseLeftY }}
+        />
+        <motion.div
+          className="absolute top-[-272px] right-0 w-[871px] h-[871px] rounded-full bg-[#cfe0ff] opacity-70 blur-[128px] pointer-events-none z-0"
+          style={{ y: prefersReducedMotion ? 0 : ellipseRightY }}
+        />
         <div className="relative z-10">
           <Hero onOpenDemo={() => handleOpenDemo()} />
         </div>
