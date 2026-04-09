@@ -31,6 +31,13 @@ const introReveal = {
   }),
 };
 
+const heroStats = [
+  { value: "в 3–5 раз", label: "ускорьте бизнес-процессы" },
+  { value: "до 30%", label: "сократите расходы" },
+  { value: "на 50%", label: "автоматизируйте рутину" },
+  { value: "100%", label: "контроль и прозрачность" },
+] as const;
+
 export default function Hero({ onOpenDemo }: HeroProps) {
   const cardsScrollerRef = useRef<HTMLDivElement | null>(null);
   const handleCardKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -96,17 +103,41 @@ export default function Hero({ onOpenDemo }: HeroProps) {
             <br className="hidden lg:block" />
             для&nbsp;управления крупным бизнесом
           </motion.p>
+          <motion.div
+            className="w-full max-w-[928px] px-6 lg:px-8 pt-1"
+            variants={introReveal}
+            custom={0.26}
+          >
+            <div className="grid grid-cols-2 gap-6 lg:flex lg:items-stretch lg:justify-center lg:gap-0 lg:divide-x lg:divide-[#d5d9e4]">
+              {heroStats.map((stat, index) => (
+                <div key={stat.value} className="flex items-stretch justify-center lg:justify-start lg:px-5">
+                  <motion.div
+                    className="flex flex-col gap-[2px] items-center text-center min-w-[130px] lg:min-w-[160px]"
+                    variants={introReveal}
+                    custom={0.36 + index * 0.06}
+                  >
+                    <p className="font-normal text-[30px] sm:text-[32px] lg:text-[36px] text-[#2e3345] leading-[1.2] whitespace-nowrap">
+                      {stat.value}
+                    </p>
+                    <p className="font-medium text-[13px] lg:text-[14px] text-[#616f9e] leading-[1.2] text-center lg:whitespace-nowrap">
+                      {stat.label}
+                    </p>
+                  </motion.div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
           {/* Subtitle */}
           <motion.p
             className="font-normal text-[16px] sm:text-[clamp(1rem,3.5vw,1.5rem)] text-[#616f9e] text-center leading-[1.4] lg:leading-[1.35] max-w-[840px] px-6"
             variants={introReveal}
-            custom={0.26}
+            custom={0.4}
           >
             Контроль процессов, денег и&nbsp;сроков в&nbsp;одной системе
           </motion.p>
         </div>
         {/* CTA */}
-        <motion.div className="flex flex-col gap-[8px] items-center" variants={introReveal} custom={0.36}>
+        <motion.div className="flex flex-col gap-[8px] items-center" variants={introReveal} custom={0.62}>
           <button
             type="button"
             onClick={onOpenDemo}
