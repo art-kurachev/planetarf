@@ -2,10 +2,10 @@
 
 import { type KeyboardEvent, useEffect, useRef } from "react";
 
-const img2 = "/figma-assets/hero-segment-4.png";
+const img2 = "/figma-assets/hero-segment-3-new.png";
 const img3 = "/figma-assets/hero-segment-2.png";
-const img5 = "/figma-assets/hero-segment-3.png";
-const img6 = "/figma-assets/hero-segment-1.png";
+const img5 = "/figma-assets/hero-segment-1-new.png";
+const img6 = "/figma-assets/hero-segment-4-new.png";
 
 type HeroProps = {
   onOpenDemo: () => void;
@@ -114,12 +114,12 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[276px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[512px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img2}
               alt=""
-              className="block w-full h-full object-contain object-left-top"
+              className="block w-full h-full object-contain object-left-top xl:object-cover"
             />
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
         >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
@@ -168,7 +168,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
         >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
@@ -186,12 +186,12 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[276px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img5}
               alt=""
-              className="block w-full h-full object-contain object-left-top"
+              className="block w-full h-full object-contain object-left-top xl:object-cover"
             />
           </div>
         </div>
@@ -202,7 +202,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[24px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
         >
           <div className="flex flex-col gap-[12px]">
             <p className="text-[18px] text-[#2e3345] leading-[1.2]">
@@ -220,12 +220,12 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[8px] w-[276px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img6}
               alt=""
-              className="block w-full h-full object-contain object-left-top"
+              className="block w-full h-full object-contain object-left-top xl:object-cover"
             />
           </div>
         </div>
