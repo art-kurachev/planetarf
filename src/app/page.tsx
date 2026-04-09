@@ -12,9 +12,11 @@ import DemoRequestModal from "@/components/DemoRequestModal";
 export default function Home() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [prefillEmail, setPrefillEmail] = useState("");
+  const [isDemoModalInitialSuccess, setIsDemoModalInitialSuccess] = useState(false);
 
   const handleOpenDemo = useCallback((email?: string) => {
     setPrefillEmail(email ?? "");
+    setIsDemoModalInitialSuccess(false);
     setIsDemoModalOpen(true);
   }, []);
 
@@ -49,11 +51,18 @@ export default function Home() {
       <section id="testimonials" className="scroll-mt-28 pt-[40px] pb-[56px] sm:py-20 lg:py-28">
         <Testimonials />
       </section>
-      <Footer />
+      <Footer
+        onSubmitEmail={(email) => {
+          setPrefillEmail(email);
+          setIsDemoModalInitialSuccess(true);
+          setIsDemoModalOpen(true);
+        }}
+      />
       <DemoRequestModal
         isOpen={isDemoModalOpen}
         onClose={() => setIsDemoModalOpen(false)}
         prefillEmail={prefillEmail}
+        initialSuccess={isDemoModalInitialSuccess}
       />
     </main>
   );

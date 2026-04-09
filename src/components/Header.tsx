@@ -66,7 +66,7 @@ export default function Header({ onOpenDemo }: HeaderProps) {
 
         {/* Buttons */}
         <div className="ml-auto flex gap-2 items-center shrink-0">
-          <button className="hidden sm:block backdrop-blur-[3px] border-[1.5px] border-[#e9edf4] px-4 py-2 lg:px-6 lg:py-3 rounded-[24px] font-medium text-[14px] text-[#2e3345] whitespace-nowrap transition-all duration-200 hover:bg-[#f3f7ff] hover:border-[#c4d3ef] hover:-translate-y-[2px] hover:shadow-[0px_10px_20px_rgba(103,136,236,0.16)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40">
+          <button className="hidden sm:block [background:unset] [background-color:unset] backdrop-blur-[3px] border-[1.5px] border-[#c7cdd6] px-4 py-2 lg:px-6 lg:py-3 rounded-[24px] font-medium text-[14px] text-[#2e3345] whitespace-nowrap transition-all duration-200 hover:bg-[#f3f7ff] hover:border-[#c4d3ef] hover:-translate-y-[2px] hover:shadow-[0px_10px_20px_rgba(103,136,236,0.16)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40">
             Войти
           </button>
           <button

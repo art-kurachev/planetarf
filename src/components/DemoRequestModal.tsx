@@ -6,6 +6,7 @@ type DemoRequestModalProps = {
   isOpen: boolean;
   onClose: () => void;
   prefillEmail?: string;
+  initialSuccess?: boolean;
 };
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -44,7 +45,12 @@ const formatPhone = (value: string) => {
   return result;
 };
 
-export default function DemoRequestModal({ isOpen, onClose, prefillEmail = "" }: DemoRequestModalProps) {
+export default function DemoRequestModal({
+  isOpen,
+  onClose,
+  prefillEmail = "",
+  initialSuccess = false,
+}: DemoRequestModalProps) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState(prefillEmail);
@@ -57,8 +63,9 @@ export default function DemoRequestModal({ isOpen, onClose, prefillEmail = "" }:
   useEffect(() => {
     if (isOpen) {
       setEmail(normalizeEmail(prefillEmail));
+      setIsSuccess(initialSuccess);
     }
-  }, [isOpen, prefillEmail]);
+  }, [initialSuccess, isOpen, prefillEmail]);
 
   useEffect(() => {
     if (isOpen) {
