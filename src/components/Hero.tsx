@@ -114,12 +114,12 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[512px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img2}
               alt=""
-              className="block w-full h-full object-contain object-left-top xl:object-cover"
+              className="block w-full h-full object-cover object-left-top"
             />
           </div>
         </div>
@@ -186,12 +186,12 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img5}
               alt=""
-              className="block w-full h-full object-contain object-left-top xl:object-cover"
+              className="block w-full h-full object-cover object-left-top"
             />
           </div>
         </div>
@@ -220,12 +220,12 @@ export default function Hero({ onOpenDemo }: HeroProps) {
               ))}
             </div>
           </div>
-          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className="border border-[#e9edf4] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img6}
               alt=""
-              className="block w-full h-full object-contain object-left-top xl:object-cover"
+              className="block w-full h-full object-cover object-left-top"
             />
           </div>
         </div>
