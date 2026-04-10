@@ -3,6 +3,7 @@
 import { type KeyboardEvent, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { containerReveal, itemReveal, revealViewport } from "@/components/motion";
+import styles from "@/components/Hero.module.css";
 
 const img2 = "/figma-assets/hero-segment-3-new.png";
 const img3 = "/figma-assets/hero-segment-2.png";
@@ -122,7 +123,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
 
   return (
     <motion.div
-      className="flex flex-col gap-10 lg:gap-[120px] items-center w-full max-w-[1224px] mx-auto px-0 lg:px-8 pt-[119px]"
+      className={styles.root}
       variants={containerReveal}
       initial="hidden"
       whileInView="show"
@@ -130,48 +131,48 @@ export default function Hero({ onOpenDemo }: HeroProps) {
     >
       {/* Верхний блок: бейдж + заголовок + CTA */}
       <motion.div
-        className="flex flex-col gap-6 lg:gap-8 items-center w-full pt-0 pb-[80px] lg:pb-0 px-6"
+        className={styles.intro}
         variants={itemReveal}
         initial="hidden"
         whileInView="show"
         viewport={revealViewport}
       >
-        <div className="flex flex-col gap-4 items-center w-full">
+        <div className={styles.introContent}>
           {/* Бейдж */}
           <motion.div
-            className="border-[1.5px] border-[#94b7f4] flex items-center justify-center px-[24px] py-[8px] rounded-[24px]"
+            className={styles.badge}
             variants={introReveal}
             custom={0.05}
           >
-            <p className="font-medium text-[14px] lg:text-[16px] text-[#6788ec]">Planeta ERP</p>
+            <p className={styles.badgeText}>Planeta ERP</p>
           </motion.div>
           {/* H1 */}
           <motion.p
-            className="font-normal text-[28px] sm:text-[clamp(2rem,6vw,3.5rem)] text-[#2e3345] text-center leading-[1.2] lg:leading-[1.15]"
+            className={styles.title}
             variants={introReveal}
             custom={0.16}
           >
             Единая цифровая экосистема{" "}
-            <br className="hidden lg:block" />
+            <br className={styles.desktopBreak} />
             для&nbsp;управления крупным бизнесом
           </motion.p>
           <motion.div
-            className="w-full max-w-[928px] px-6 lg:px-8 pt-4 pb-4"
+            className={styles.statsWrap}
             variants={introReveal}
             custom={0.26}
           >
-            <div className="grid grid-cols-2 gap-6 lg:flex lg:items-stretch lg:justify-center lg:gap-0 lg:divide-x lg:divide-[#d5d9e4]">
+            <div className={styles.statsGrid}>
               {heroStats.map((stat, index) => (
-                <div key={stat.value} className="flex items-stretch justify-center lg:justify-start lg:px-5">
+                <div key={stat.value} className={styles.statItemWrap}>
                   <motion.div
-                    className="flex flex-col gap-[2px] items-center text-center min-w-[130px] lg:min-w-[160px]"
+                    className={styles.statItem}
                     variants={introReveal}
                     custom={0.36 + index * 0.06}
                   >
-                    <p className="font-normal text-[30px] sm:text-[32px] lg:text-[36px] text-[#2e3345] leading-[1.2] whitespace-nowrap">
+                    <p className={styles.statValue}>
                       {stat.value}
                     </p>
-                    <p className="font-medium text-[13px] lg:text-[14px] text-[#616f9e] leading-[1.2] text-center lg:whitespace-nowrap">
+                    <p className={styles.statLabel}>
                       {stat.label}
                     </p>
                   </motion.div>
@@ -181,7 +182,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           </motion.div>
           {/* Subtitle */}
           <motion.p
-            className="font-normal text-[16px] sm:text-[clamp(1rem,3.5vw,1.5rem)] text-[#616f9e] text-center leading-[1.4] lg:leading-[1.35] max-w-[840px] px-6"
+            className={styles.subtitle}
             variants={introReveal}
             custom={0.4}
           >
@@ -189,24 +190,24 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           </motion.p>
         </div>
         {/* CTA */}
-        <motion.div className="flex flex-col gap-[8px] items-center" variants={introReveal} custom={0.62}>
+        <motion.div className={styles.ctaBlock} variants={introReveal} custom={0.62}>
           <button
             type="button"
             onClick={onOpenDemo}
-            className="hero-cta-shimmer bg-[#6788ec] px-[24px] py-[16px] rounded-[24px] shadow-[0px_9px_9px_rgba(103,136,236,0.16)] text-white font-medium text-[16px] leading-[16px] transition-all duration-200 hover:bg-[#4f74e2] hover:-translate-y-[2px] hover:shadow-[0px_16px_28px_rgba(103,136,236,0.34)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40"
+            className={`hero-cta-shimmer ${styles.ctaButton}`}
           >
             Записаться на&nbsp;демо-показ
           </button>
-          <p className="text-[12px] text-[#616f9e]">Это займет не&nbsp;более 15&nbsp;минут</p>
+          <p className={styles.ctaHint}>Это займет не&nbsp;более 15&nbsp;минут</p>
         </motion.div>
       </motion.div>
 
-      <motion.div className="flex flex-col gap-[24px] items-start w-full" variants={itemReveal}>
-        <div className="flex flex-col gap-[8px] items-center w-full px-6 text-center">
-          <p className="font-normal text-[32px] lg:text-[48px] text-[#2e3345] leading-[1.2]">
+      <motion.div className={styles.segmentsRoot} variants={itemReveal}>
+        <div className={styles.segmentsHeader}>
+          <p className={styles.segmentsTitle}>
             Кому подойдет экосистема Планета
           </p>
-          <p className="font-normal text-[16px] lg:text-[18px] text-[#909abb] leading-[20px]">
+          <p className={styles.segmentsSubtitle}>
             Выберите свой сегмент — покажем, как платформа решает именно ваши задачи
           </p>
         </div>
@@ -214,7 +215,7 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         {/* 4 карточки */}
         <motion.div
           ref={cardsScrollerRef}
-          className="hide-scrollbar flex sm:grid sm:grid-cols-2 xl:grid-cols-4 gap-[8px] w-full overflow-x-auto overflow-y-hidden snap-none sm:snap-x sm:snap-mandatory pl-4 pr-4 sm:overflow-visible touch-pan-x overscroll-x-contain [-webkit-overflow-scrolling:touch] cursor-grab sm:cursor-default select-none"
+          className={`hide-scrollbar ${styles.cardsScroller}`}
           variants={containerReveal}
         >
         {/* Карточка 1: Инвестиционно-строительные */}
@@ -223,32 +224,32 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[8px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className={styles.card}
           variants={cardReveal}
         >
-          <div className="flex flex-col gap-[12px]">
-            <p className="text-[18px] text-[#2e3345] leading-[1.2]">
+          <div className={styles.cardContent}>
+            <p className={styles.cardTitle}>
               Инвестиционно-
               <br />
               строительные компании
             </p>
-            <div className="flex flex-wrap gap-[4px]">
+            <div className={styles.chips}>
               {["Снабжение", "Оплаты", "Сроки", "Контроль стройки", "Поставки"].map((t) => (
                 <span
                   key={t}
-                  className="bg-[#f4f6fa] px-[8px] py-[4px] rounded-[8px] text-[12px] text-[#616f9e] font-medium"
+                  className={styles.chip}
                 >
                   {t}
                 </span>
               ))}
             </div>
           </div>
-          <div className="border border-transparent ring-[4px] ring-[#2e3345] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className={styles.screenFrame}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img2}
               alt=""
-              className="block w-full h-full object-cover object-left-top"
+              className={styles.screenImage}
             />
           </div>
         </motion.div>
@@ -259,20 +260,20 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[8px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className={styles.card}
           variants={cardReveal}
         >
-          <div className="flex flex-col gap-[12px]">
-            <p className="text-[18px] text-[#2e3345] leading-[1.2]">
+          <div className={styles.cardContent}>
+            <p className={styles.cardTitle}>
               Управляющие
               <br />
               компании (ЖКХ)
             </p>
-            <div className="flex flex-wrap gap-[4px]">
+            <div className={styles.chips}>
               {["Заявки", "Аварии", "SLA", "Обслуживание"].map((t) => (
                 <span
                   key={t}
-                  className="bg-[#f4f6fa] px-[8px] py-[4px] rounded-[8px] text-[12px] text-[#616f9e] font-medium"
+                  className={styles.chip}
                 >
                   {t}
                 </span>
@@ -280,13 +281,13 @@ export default function Hero({ onOpenDemo }: HeroProps) {
             </div>
           </div>
           {/* Phone mockup */}
-          <div className="flex h-[236px] items-start justify-center relative shrink-0 w-full">
-            <div className="h-[236px] relative shrink-0 w-[218px]">
+          <div className={styles.phoneWrap}>
+            <div className={styles.phoneInner}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={img3}
                 alt="Мобильное приложение"
-                className="absolute bottom-0 left-0 w-full h-auto origin-bottom scale-[1.15] object-contain pointer-events-none drop-shadow-[-45px_-27px_32px_rgba(122,133,168,0.03)]"
+                className={styles.phoneImage}
               />
             </div>
           </div>
@@ -298,31 +299,31 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[8px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className={styles.card}
           variants={cardReveal}
         >
-          <div className="flex flex-col gap-[12px]">
-            <p className="text-[18px] text-[#2e3345] leading-[1.2]">
+          <div className={styles.cardContent}>
+            <p className={styles.cardTitle}>
               Агентства недвижимости
               <br />и&nbsp;Департаменты продаж
             </p>
-            <div className="flex flex-wrap gap-[4px]">
+            <div className={styles.chips}>
               {["Лиды", "Сделки", "Звонки", "Воронка", "Клиенты"].map((t) => (
                 <span
                   key={t}
-                  className="bg-[#f4f6fa] px-[8px] py-[4px] rounded-[8px] text-[12px] text-[#616f9e] font-medium"
+                  className={styles.chip}
                 >
                   {t}
                 </span>
               ))}
             </div>
           </div>
-          <div className="border border-transparent ring-[4px] ring-[#2e3345] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className={styles.screenFrame}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img5}
               alt=""
-              className="block w-full h-full object-cover object-left-top"
+              className={styles.screenImage}
             />
           </div>
         </motion.div>
@@ -333,31 +334,31 @@ export default function Hero({ onOpenDemo }: HeroProps) {
           tabIndex={0}
           onClick={onOpenDemo}
           onKeyDown={handleCardKeyDown}
-          className="snap-start shrink-0 w-[300px] sm:w-auto group cursor-pointer bg-white border border-[#e9edf4] rounded-[24px] flex flex-col justify-between gap-[24px] pt-[24px] px-[24px] overflow-hidden relative transition-all duration-300 xl:hover:-translate-y-[8px] xl:hover:[background:radial-gradient(211%_141.42%_at_100%_100%,rgba(103,136,236,0)_0%,rgba(103,136,236,0.8)_100%),var(--bg-elevated,#F8FAFC)] xl:hover:border-transparent xl:hover:shadow-[0px_199px_56px_0px_rgba(103,136,236,0),0px_127px_51px_0px_rgba(103,136,236,0.03),0px_71px_43px_0px_rgba(103,136,236,0.09),0px_32px_32px_0px_rgba(103,136,236,0.16),0px_8px_17px_0px_rgba(103,136,236,0.18)]"
+          className={styles.card}
           variants={cardReveal}
         >
-          <div className="flex flex-col gap-[12px]">
-            <p className="text-[18px] text-[#2e3345] leading-[1.2]">
+          <div className={styles.cardContent}>
+            <p className={styles.cardTitle}>
               Корпоративный сектор
               <br />и&nbsp;Сервисные компании
             </p>
-            <div className="flex flex-wrap gap-[4px]">
+            <div className={styles.chips}>
               {["Согласования", "Процессы", "Задачи", "Документы"].map((t) => (
                 <span
                   key={t}
-                  className="bg-[#f4f6fa] px-[8px] py-[4px] rounded-[8px] text-[12px] text-[#616f9e] font-medium"
+                  className={styles.chip}
                 >
                   {t}
                 </span>
               ))}
             </div>
           </div>
-          <div className="border border-transparent ring-[4px] ring-[#2e3345] h-[237px] rounded-tl-[12px] w-[276px] sm:w-[540px] relative overflow-hidden shrink-0 shadow-[-45px_-27px_32px_0px_rgba(122,133,168,0.03),-20px_-12px_23px_0px_rgba(122,133,168,0.05)]">
+          <div className={styles.screenFrame}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={img6}
               alt=""
-              className="block w-full h-full object-cover object-left-top"
+              className={styles.screenImage}
             />
           </div>
         </motion.div>

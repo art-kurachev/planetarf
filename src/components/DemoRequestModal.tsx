@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, MouseEvent, useEffect, useMemo, useState } from "react";
+import styles from "@/components/DemoRequestModal.module.css";
 
 type DemoRequestModalProps = {
   isOpen: boolean;
@@ -62,6 +63,7 @@ export default function DemoRequestModal({
 
   useEffect(() => {
     if (isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setEmail(normalizeEmail(prefillEmail));
       setIsSuccess(initialSuccess);
     }
@@ -69,6 +71,7 @@ export default function DemoRequestModal({
 
   useEffect(() => {
     if (isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShouldRender(true);
       setIsVisible(false);
       const enterTimeout = window.setTimeout(() => {
@@ -88,17 +91,75 @@ export default function DemoRequestModal({
   useEffect(() => {
     if (!isOpen) return;
 
+    const blockedKeys = new Set([
+      " ",
+      "ArrowUp",
+      "ArrowDown",
+      "PageUp",
+      "PageDown",
+      "Home",
+      "End",
+    ]);
+
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
+      if (event.key === "Escape") {
+        onClose();
+        return;
+      }
+      if (blockedKeys.has(event.key)) {
+        event.preventDefault();
+      }
     };
 
+    const preventScroll = (event: WheelEvent | TouchEvent) => {
+      event.preventDefault();
+    };
+
+    const html = document.documentElement;
+    const scrollY = window.scrollY;
     const prevOverflow = document.body.style.overflow;
+    const prevHtmlOverflow = html.style.overflow;
+    const prevHtmlScrollBehavior = html.style.scrollBehavior;
+    const prevOverscrollBehavior = document.body.style.overscrollBehavior;
+    const prevTouchAction = document.body.style.touchAction;
+    const prevPosition = document.body.style.position;
+    const prevTop = document.body.style.top;
+    const prevWidth = document.body.style.width;
+    const prevLeft = document.body.style.left;
+    const prevRight = document.body.style.right;
+
+    html.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
+    document.body.style.overscrollBehavior = "none";
+    document.body.style.touchAction = "none";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+
     window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("wheel", preventScroll, { passive: false });
+    window.addEventListener("touchmove", preventScroll, { passive: false });
 
     return () => {
+      html.style.overflow = prevHtmlOverflow;
       document.body.style.overflow = prevOverflow;
+      document.body.style.overscrollBehavior = prevOverscrollBehavior;
+      document.body.style.touchAction = prevTouchAction;
+      document.body.style.position = prevPosition;
+      document.body.style.top = prevTop;
+      document.body.style.width = prevWidth;
+      document.body.style.left = prevLeft;
+      document.body.style.right = prevRight;
+      html.style.scrollBehavior = "auto";
+      window.scrollTo(0, scrollY);
+      window.requestAnimationFrame(() => {
+        html.style.scrollBehavior = prevHtmlScrollBehavior;
+      });
       window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
     };
   }, [isOpen, onClose]);
 
@@ -144,7 +205,7 @@ export default function DemoRequestModal({
 
   return (
     <div
-      className="fixed inset-0 z-[120] bg-[#0f172a]/50 backdrop-blur-[4px] flex items-center justify-center p-4"
+      className={styles.overlay}
       style={{
         opacity: isVisible ? 1 : 0,
         transition: "opacity 300ms ease",
@@ -153,7 +214,7 @@ export default function DemoRequestModal({
       role="presentation"
     >
       <div
-        className="w-full max-w-[466px] rounded-[48px] p-8"
+        className={styles.panel}
         style={{
           background:
             "radial-gradient(141.42% 211% at 100% 100%, rgba(103, 136, 236, 0) 0%, rgba(103, 136, 236, 0.8) 100%), #f8fafc",
@@ -168,14 +229,14 @@ export default function DemoRequestModal({
 
         {!isSuccess ? (
           <>
-            <div className="mb-8 flex items-start gap-2 w-full">
-              <div className="flex-1">
-                <p className="text-[28px] leading-[1.2] text-[#2e3345]">
+            <div className={styles.header}>
+              <div className={styles.headerText}>
+                <p className={styles.heading}>
                   Запишитесь на
                   <br />
                   демонстрацию системы
                 </p>
-                <p className="mt-2 text-[16px] leading-[1.4] text-[#2e3345]">
+                <p className={styles.subheading}>
                   И&nbsp;получите доступ к&nbsp;planeta бесплатно.
                   <br />
                   Попробуйте все возможности сервиса
@@ -186,20 +247,20 @@ export default function DemoRequestModal({
               <button
                 type="button"
                 onClick={handleClose}
-                className="shrink-0 size-11 rounded-[16px] bg-[#b9c8f5] text-[#616f9e] flex items-center justify-center transition-colors hover:bg-[#a9bbf1]"
+                className={styles.closeButton}
                 aria-label="Закрыть окно"
               >
-                <span className="text-[30px] leading-none -mt-0.5">×</span>
+                <span className={styles.closeIcon}>×</span>
               </button>
             </div>
 
-            <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+            <form className={styles.form} onSubmit={handleSubmit}>
               <input
                 type="text"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
                 placeholder="Ваше имя"
-                className="w-full rounded-[56px] border border-[#e9edf4] bg-white px-6 py-4 text-[16px] text-[#2e3345] outline-none transition-colors placeholder:text-[#2e3345]/60 focus:border-[#6788ec]"
+                className={styles.input}
               />
               <input
                 type="email"
@@ -210,7 +271,7 @@ export default function DemoRequestModal({
                 autoCapitalize="none"
                 autoCorrect="off"
                 spellCheck={false}
-                className="w-full rounded-[56px] border border-[#e9edf4] bg-white px-6 py-4 text-[16px] text-[#2e3345] outline-none transition-colors placeholder:text-[#2e3345]/60 focus:border-[#6788ec]"
+                className={styles.input}
               />
               <input
                 type="tel"
@@ -219,24 +280,22 @@ export default function DemoRequestModal({
                 placeholder="+7 (___) ___-__-__"
                 inputMode="tel"
                 autoComplete="tel"
-                className="w-full rounded-[56px] border border-[#e9edf4] bg-white px-6 py-4 text-[16px] text-[#2e3345] outline-none transition-colors placeholder:text-[#2e3345]/60 focus:border-[#6788ec]"
+                className={styles.input}
               />
 
-              <label className="flex items-start gap-3 mt-1 cursor-pointer select-none">
+              <label className={styles.consentLabel}>
                 <input
                   type="checkbox"
                   checked={isConsentChecked}
                   onChange={(event) => setIsConsentChecked(event.target.checked)}
-                  className="sr-only"
+                  className={styles.checkboxNative}
                 />
                 <span
-                  className={`mt-[1px] h-8 w-8 shrink-0 rounded-[8px] border flex items-center justify-center transition-colors ${
-                    isConsentChecked ? "bg-[#4c87ec] border-[#4c87ec]" : "bg-white border-[#cfd8ee]"
-                  }`}
+                  className={`${styles.checkboxBox} ${isConsentChecked ? styles.checkboxChecked : ""}`}
                 >
                   {isConsentChecked ? (
                     <svg
-                      className="h-4 w-4"
+                      className={styles.checkIcon}
                       viewBox="0 0 16 16"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -252,7 +311,7 @@ export default function DemoRequestModal({
                     </svg>
                   ) : null}
                 </span>
-                <span className="text-[14px] leading-[1.35] text-[#616f9e]">
+                <span className={styles.consentText}>
                   Я&nbsp;даю своё Согласие на&nbsp;обработку персональных данных в&nbsp;соответствии с&nbsp;Политикой в&nbsp;
                   отношении обработки персональных данных
                 </span>
@@ -260,22 +319,22 @@ export default function DemoRequestModal({
               <button
                 type="submit"
                 disabled={!canSubmit || isSubmitting}
-                className="mt-1 bg-[linear-gradient(90deg,#6788ec_0%,#5b81ec_100%)] px-6 py-5 rounded-[32px] text-white font-medium text-[16px] leading-[16px] shadow-[0px_9px_9px_rgba(103,136,236,0.16)] transition-all duration-200 hover:brightness-95 hover:-translate-y-[2px] hover:shadow-[0px_16px_28px_rgba(103,136,236,0.34)] active:translate-y-0 active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40 disabled:cursor-not-allowed disabled:brightness-90 disabled:transform-none"
+                className={styles.submitButton}
               >
                 {isSubmitting ? "Отправляем..." : "Записаться на\u00A0демо-презентацию"}
               </button>
             </form>
           </>
         ) : (
-          <div className="w-full flex flex-col items-center gap-6 text-center">
-            <div className="w-full flex flex-col items-center gap-3">
-              <p className="w-full text-[28px] leading-[1.2] text-[#2e3345]">Спасибо за запись!</p>
-              <p className="w-full text-[16px] leading-[1.4] text-[#2e3345]">
+          <div className={styles.successWrap}>
+            <div className={styles.successText}>
+              <p className={styles.successTitle}>Спасибо за запись!</p>
+              <p className={styles.successDesc}>
                 Мы получили ваш запрос
                 <br />
                 на демонстрацию системы «Планета»
               </p>
-              <p className="w-full text-[14px] leading-[1.4] text-[#616f9e]">
+              <p className={styles.successHint}>
                 Обычно отвечаем в&nbsp;течение
                 <br />
                 15–30 минут в&nbsp;рабочее время
@@ -284,7 +343,7 @@ export default function DemoRequestModal({
             <button
               type="button"
               onClick={handleClose}
-              className="w-full bg-[#6788ec] px-6 py-5 rounded-[32px] text-white font-medium text-[16px] leading-[16px] transition-all duration-200 hover:bg-[#5a7de6] active:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6788ec]/40"
+              className={styles.okButton}
             >
               Хорошо
             </button>

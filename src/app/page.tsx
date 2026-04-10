@@ -63,7 +63,7 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-white min-h-screen">
+    <main className="homeMain">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -74,27 +74,27 @@ export default function Home() {
       />
       <Header onOpenDemo={() => handleOpenDemo()} />
       {/* Hero с декоративным фоном */}
-      <section id="app" className="relative overflow-x-clip overflow-y-visible scroll-mt-28 pt-[56px] sm:pt-12 lg:pt-14 pb-[56px] sm:pb-20 lg:pb-28">
+      <section id="app" className="heroSection">
         {/* Декоративные эллипсы */}
         <motion.div
-          className="absolute top-0 left-0 w-[1109px] h-[1109px] rounded-full bg-[#cfe0ff] opacity-70 blur-[128px] pointer-events-none z-0"
+          className="heroBgLeft"
           style={{ y: prefersReducedMotion ? 0 : ellipseLeftY }}
         />
         <motion.div
-          className="absolute top-[-272px] right-0 w-[871px] h-[871px] rounded-full bg-[#cfe0ff] opacity-70 blur-[128px] pointer-events-none z-0"
+          className="heroBgRight"
           style={{ y: prefersReducedMotion ? 0 : ellipseRightY }}
         />
-        <div className="relative z-10">
+        <div className="heroContent">
           <Hero onOpenDemo={() => handleOpenDemo()} />
         </div>
       </section>
-      <div id="integrations" className="scroll-mt-28 py-[56px] sm:py-20 lg:py-28">
+      <div id="integrations" className="contentSection integrationsSection">
         <Integrations onOpenDemo={() => handleOpenDemo()} />
       </div>
-      <section id="features" className="scroll-mt-28 py-[56px] sm:py-20 lg:py-[56px]">
+      <section id="features" className="contentSection featuresSection">
         <Features />
       </section>
-      <section id="testimonials" className="scroll-mt-28 pt-[40px] pb-[56px] sm:py-20 lg:py-28">
+      <section id="testimonials" className="testimonialsSection">
         <Testimonials />
       </section>
       <Footer
