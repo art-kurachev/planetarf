@@ -79,7 +79,7 @@
   font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 400;
   line-height: 1.2;
-  color: #2e3345;
+  color: var(--color-text-primary);
   text-align: center;
 }
 
@@ -88,9 +88,9 @@
   width: 100%;
   max-width: 452px;
   padding: 4px;
-  border: 1px solid #e9edf4;
+  border: 1px solid var(--color-border);
   border-radius: 24px;
-  background: #fff;
+  background: var(--color-surface);
   flex-direction: column;
   align-items: stretch;
   gap: 8px;
@@ -104,29 +104,29 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 14px;
-  color: #2e3345;
+  color: var(--color-text-primary);
   outline: none;
 }
 
 .input::placeholder {
-  color: rgba(46, 51, 69, 0.6);
+  color: rgba(var(--color-text-primary-rgb), 0.6);
 }
 
 .submitButton {
   padding: 14px 24px;
   border-radius: 20px;
-  background: #6788ec;
+  background: var(--color-accent);
   font-size: 14px;
   font-weight: 500;
   line-height: 16px;
-  color: #fff;
+  color: var(--color-surface);
   white-space: nowrap;
   transition: all 0.2s;
 }
 
 .submitButton:hover {
-  background: #4f74e2;
-  box-shadow: 0 12px 24px rgba(103, 136, 236, 0.32);
+  background: var(--color-accent-hover);
+  box-shadow: 0 12px 24px rgba(var(--color-accent-rgb), 0.32);
 }
 
 .submitButton:active {
@@ -141,7 +141,7 @@
 
 .submitButton:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(103, 136, 236, 0.4);
+  box-shadow: 0 0 0 2px rgba(var(--color-accent-rgb), 0.4);
 }
 
 .contacts {
@@ -151,7 +151,7 @@
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
-  color: #1e212b;
+  color: var(--color-text-strong);
   text-align: center;
 }
 
@@ -201,7 +201,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6;
-  color: #2e3345;
+  color: var(--color-text-primary);
   opacity: 0.8;
   text-align: center;
 }

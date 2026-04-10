@@ -17,7 +17,7 @@
 }
 
 .headerScrolled {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(var(--color-surface-rgb), 0.75);
   backdrop-filter: blur(12px);
 }
 
@@ -28,6 +28,13 @@
   align-items: center;
   gap: 1rem;
   margin: 0 auto;
+}
+
+.logoLink {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  line-height: 0;
 }
 
 .logo {
@@ -44,13 +51,13 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2;
-  color: #2e3345;
+  color: var(--color-text-primary);
   white-space: nowrap;
   transition: all 0.2s;
 }
 
 .navButton:hover {
-  color: #6788ec;
+  color: var(--color-accent);
   transform: translateY(-1px);
 }
 
@@ -65,41 +72,41 @@
 .loginButton {
   display: none;
   padding: 0.5rem 1rem;
-  border: 1.5px solid #c7cdd6;
+  border: 1.5px solid var(--color-border-login);
   border-radius: 24px;
   background: unset;
   backdrop-filter: blur(3px);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.2;
-  color: #2e3345;
+  color: var(--color-text-primary);
   white-space: nowrap;
   transition: all 0.2s;
 }
 
 .loginButton:hover {
-  background: #f3f7ff;
-  border-color: #c4d3ef;
+  background: var(--color-tint-login);
+  border-color: var(--color-border-login-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(103, 136, 236, 0.16);
+  box-shadow: 0 10px 20px rgba(var(--color-accent-rgb), 0.16);
 }
 
 .demoButton {
   padding: 0.5rem 1rem;
   border-radius: 24px;
-  background: #6788ec;
+  background: var(--color-accent);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.2;
-  color: #fff;
+  color: var(--color-surface);
   white-space: nowrap;
   transition: all 0.2s;
 }
 
 .demoButton:hover {
-  background: #4f74e2;
+  background: var(--color-accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(103, 136, 236, 0.32);
+  box-shadow: 0 12px 24px rgba(var(--color-accent-rgb), 0.32);
 }
 
 .demoButton:active {
@@ -110,7 +117,7 @@
 .loginButton:focus-visible,
 .demoButton:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(103, 136, 236, 0.4);
+  box-shadow: 0 0 0 2px rgba(var(--color-accent-rgb), 0.4);
 }
 
 @media (min-width: 640px) {

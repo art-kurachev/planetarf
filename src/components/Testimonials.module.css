@@ -20,20 +20,20 @@
 .badge {
   padding: 8px 16px;
   border-radius: 24px;
-  background: #dbe7fb;
+  background: var(--color-badge-bg);
 }
 
 .badgeText {
   font-size: 14px;
   font-weight: 500;
-  color: #6788ec;
+  color: var(--color-accent);
 }
 
 .title {
   font-size: 28px;
   font-weight: 400;
   line-height: 1.2;
-  color: #2e3345;
+  color: var(--color-text-primary);
   text-align: center;
 }
 
@@ -41,7 +41,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 20px;
-  color: #909abb;
+  color: var(--color-text-subtle);
   text-align: center;
 }
 
@@ -61,9 +61,9 @@
 .card {
   display: flex;
   padding: 24px;
-  border: 1px solid #e9edf4;
+  border: 1px solid var(--color-border);
   border-radius: 32px;
-  background: #f8fafc;
+  background: var(--color-elevated);
   flex-direction: column;
   justify-content: space-between;
   gap: 24px;
@@ -73,7 +73,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6;
-  color: #2e3345;
+  color: var(--color-text-primary);
 }
 
 .author {
@@ -91,12 +91,12 @@
 .authorName {
   font-size: 16px;
   font-weight: 500;
-  color: #2e3345;
+  color: var(--color-text-primary);
 }
 
 .authorRole {
   font-size: 12px;
-  color: #909abb;
+  color: var(--color-text-subtle);
 }
 
 .tallCard {

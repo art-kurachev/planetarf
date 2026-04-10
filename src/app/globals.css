@@ -7,6 +7,58 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-text-primary: #2e3345;
+  --color-text-primary-rgb: 46, 51, 69;
+  --color-text-muted: #616f9e;
+  --color-text-subtle: #909abb;
+  --color-text-strong: #1e212b;
+
+  --color-accent: #6788ec;
+  --color-accent-hover: #4f74e2;
+  --color-accent-rgb: 103, 136, 236;
+  --color-accent-secondary: #4c87ec;
+  --color-accent-gradient-end: #5b81ec;
+  --color-accent-ok-hover: #5a7de6;
+
+  --color-surface: #fff;
+  --color-surface-rgb: 255, 255, 255;
+  --color-elevated: #f8fafc;
+  --color-tint-panel: #f4f6fa;
+  --color-tint-login: #f3f7ff;
+  --color-tint-chip: #f0f4ff;
+
+  --color-border: #e9edf4;
+  --color-border-muted: #dbe0ec;
+  --color-border-input: #cfd8ee;
+  --color-border-login: #c7cdd6;
+  --color-border-login-hover: #c4d3ef;
+
+  --color-badge-bg: #dbe7fb;
+  --color-badge-ring: #94b7f4;
+
+  --color-hero-orb: #cfe0ff;
+
+  --color-modal-close: #b9c8f5;
+  --color-modal-close-hover: #a9bbf1;
+
+  --color-backdrop-rgb: 15, 23, 42;
+
+  --color-error: #eb5757;
+  --color-error-border: #fbdddd;
+
+  --color-inverse-soft: #333;
+  --color-inverse-label: #262626;
+  --color-inverse-bg: #222;
+
+  --color-feature-tile: #eff1f8;
+
+  --color-shadow-neutral-rgb: 122, 133, 168;
+
+  --color-scrollbar-slate-light-rgb: 148, 163, 184;
+  --color-scrollbar-slate-dark-rgb: 100, 116, 139;
+}
+
 html,
 body,
 h1,
@@ -35,12 +87,12 @@ html {
   scroll-behavior: smooth;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(148, 163, 184, 0.85) transparent;
+  scrollbar-color: rgba(var(--color-scrollbar-slate-light-rgb), 0.85) transparent;
 }
 
 body {
   margin: 0;
-  background: #fff;
+  background: var(--color-surface);
   font-family: var(--font-manrope), sans-serif;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -129,7 +181,7 @@ textarea,
 
 .homeMain {
   min-height: 100vh;
-  background: #fff;
+  background: var(--color-surface);
 }
 
 .heroSection {
@@ -149,7 +201,7 @@ textarea,
   width: 1109px;
   height: 1109px;
   border-radius: 9999px;
-  background: #cfe0ff;
+  background: var(--color-hero-orb);
   opacity: 0.7;
   filter: blur(128px);
   pointer-events: none;
@@ -163,7 +215,7 @@ textarea,
   width: 871px;
   height: 871px;
   border-radius: 9999px;
-  background: #cfe0ff;
+  background: var(--color-hero-orb);
   opacity: 0.7;
   filter: blur(128px);
   pointer-events: none;
@@ -222,14 +274,15 @@ textarea,
 }
 
 .hero-cta-shimmer {
+  line-height: 16px;
   background-image:
     linear-gradient(
       110deg,
-      rgba(255, 255, 255, 0) 35%,
-      rgba(255, 255, 255, 0.24) 49%,
-      rgba(255, 255, 255, 0) 63%
+      rgba(var(--color-surface-rgb), 0) 35%,
+      rgba(var(--color-surface-rgb), 0.24) 49%,
+      rgba(var(--color-surface-rgb), 0) 63%
     ),
-    linear-gradient(90deg, #6788ec 0%, #6788ec 100%);
+    linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent) 100%);
   background-size: 220% 100%, 100% 100%;
   background-position: 200% 0, 0 0;
   background-repeat: no-repeat;
@@ -247,13 +300,21 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(148, 163, 184, 0.9) 0%, rgba(100, 116, 139, 0.9) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(var(--color-scrollbar-slate-light-rgb), 0.9) 0%,
+    rgba(var(--color-scrollbar-slate-dark-rgb), 0.9) 100%
+  );
   border-radius: 999px;
   border: 0;
 }
 
 html::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(148, 163, 184, 1) 0%, rgba(100, 116, 139, 1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(var(--color-scrollbar-slate-light-rgb), 1) 0%,
+    rgba(var(--color-scrollbar-slate-dark-rgb), 1) 100%
+  );
 }
 
 @media (min-width: 640px) {

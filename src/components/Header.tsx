@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import styles from "@/components/Header.module.css";
 
@@ -55,13 +56,15 @@ export default function Header({ onOpenDemo }: HeaderProps) {
     >
       <div className={styles.inner}>
         {/* Logo */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={logoUrl}
-          alt="Planeta ERP"
-          className={styles.logo}
-          style={{ aspectRatio: "300/75" }}
-        />
+        <Link href="/" className={styles.logoLink} aria-label="На главную">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logoUrl}
+            alt="Planeta ERP"
+            className={styles.logo}
+            style={{ aspectRatio: "300/75" }}
+          />
+        </Link>
 
         {/* Nav */}
         <nav className={styles.nav}>
