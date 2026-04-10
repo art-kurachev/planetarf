@@ -1,6 +1,7 @@
 "use client";
 
 import { type KeyboardEvent, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { containerReveal, itemReveal, revealViewport } from "@/components/motion";
 import styles from "@/components/Hero.module.css";
@@ -40,6 +41,7 @@ const heroStats = [
 ] as const;
 
 export default function Hero({ onOpenDemo }: HeroProps) {
+  const router = useRouter();
   const cardsScrollerRef = useRef<HTMLDivElement | null>(null);
   const isDraggingRef = useRef(false);
   const dragStartXRef = useRef(0);
@@ -49,6 +51,13 @@ export default function Hero({ onOpenDemo }: HeroProps) {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       onOpenDemo();
+    }
+  };
+
+  const handleIskCardKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      router.push("/isk");
     }
   };
 
@@ -222,8 +231,8 @@ export default function Hero({ onOpenDemo }: HeroProps) {
         <motion.div
           role="button"
           tabIndex={0}
-          onClick={onOpenDemo}
-          onKeyDown={handleCardKeyDown}
+          onClick={() => router.push("/isk")}
+          onKeyDown={handleIskCardKeyDown}
           className={styles.card}
           variants={cardReveal}
         >
